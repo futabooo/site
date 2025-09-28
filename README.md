@@ -1,6 +1,6 @@
 # Astro Blog
 
-futabooo's personal site powered by [withastro/astro](https://github.com/withastro/astro)
+futabooo's personal site powered by [honojs/honox](https://github.com/honojs/honox)
 
 ## Commands
 
