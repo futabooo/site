@@ -93,13 +93,13 @@ Chrome Web Store に公開する際に必須となる情報がいくつかある
 
 アイコンは 128px、スクリーンショットは 1280x800 か 640x400 のどちらかです。
 
-![Store listing](../../../assets/2024/develop-chrome-extension-notion-bar-colorize/20240502125704.png)
+![Store listing](../../assets/2024/develop-chrome-extension-notion-bar-colorize/20240502125704.png)
 
 ## プライバシーポリシーを用意する
 
 公開する拡張機能がどんなものか、使用する API の利用目的、プライバシーポリシーの URL を用意する必要があります。特にプライバシーポリシーの URL は用意するのに一手間必要でなりめんどうなのですが、今回は GitHub Pages で用意することで別途サーバの用意をしなくてもいいようにしました。
 
-![Privacy](../../../assets/2024/develop-chrome-extension-notion-bar-colorize/20240502125903.png)
+![Privacy](../../assets/2024/develop-chrome-extension-notion-bar-colorize/20240502125903.png)
 
 ### GitHub Pages で プライバシーポリシー を用意する
 

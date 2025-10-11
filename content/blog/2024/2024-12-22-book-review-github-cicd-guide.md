@@ -5,7 +5,7 @@ tags: ["Book Review"]
 pubDate: "2024/12/22"
 ---
 
-![読んだ本の表紙](../../../assets/2024/book-review-github-cicd-guide/20241222033000.png)
+![読んだ本の表紙](../../assets/2024/book-review-github-cicd-guide/20241222033000.png)
 
 https://amzn.to/49WMrtW
 
