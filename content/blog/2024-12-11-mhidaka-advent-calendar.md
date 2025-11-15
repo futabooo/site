@@ -27,7 +27,7 @@ https://x.com/futabooo/status/961804014802251776
 
 男性の正常値は50以下だそうです。私はここ数年50以下になることはなかったですが生きています。
 
-![γ-GTPの歴史](../../assets/2024/mhidaka-advent-calendar/20241210225312.png)
+![γ-GTPの歴史](./assets/2024/mhidaka-advent-calendar/20241210225312.png)
 
 毎年受けていた健康診断の結果を2017年から順に乗せてます。
 

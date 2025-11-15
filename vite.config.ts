@@ -19,7 +19,8 @@ const copyContentAssets = () => {
         'content/assets/**/*.{png,jpg,jpeg,gif,svg,webp}'
       )
       imageFiles.forEach((filePath) => {
-        const destPath = join('dist', filePath)
+        const relativePath = filePath.replace('content/', 'blog/')
+        const destPath = join('dist', relativePath)
         mkdirSync(dirname(destPath), { recursive: true })
         copyFileSync(filePath, destPath)
       })
@@ -32,6 +33,11 @@ export default defineConfig({
     alias: {
       '@components': '/app/components',
       '@layouts': '/app/layouts',
+    },
+  },
+  server: {
+    fs: {
+      allow: ['..', 'content'],
     },
   },
   ssr: {

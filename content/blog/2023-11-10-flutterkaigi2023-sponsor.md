@@ -5,7 +5,7 @@ tags: ["diary"]
 pubDate: "2023/11/10"
 ---
 
-![](../../assets/2023/flutterkaigi2023-sponsor/20231111002238.jpeg)
+![](./assets/2023/flutterkaigi2023-sponsor/20231111002238.jpeg)
 
 ## はじめに
 

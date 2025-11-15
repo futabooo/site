@@ -8,5 +8,6 @@
     "*.css": "tailwindcss"
   },
   "pasteImage.defaultName": "YMMDDHHmmss",
-  "pasteImage.path": "${projectRoot}/src/assets/${currentFileNameWithoutExt}"
+  "pasteImage.path": "${currentFileDir}/assets/${currentFileNameWithoutExt}",
+  "pasteImage.basePath": "assets/"
 }
