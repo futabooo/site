@@ -9,17 +9,19 @@ import { defineConfig } from 'vite'
 
 const entry = './app/server.ts'
 
-// content配下の画像をdistにコピーするプラグイン
+// content/blog配下の各記事フォルダ内のassetsをdistにコピーするプラグイン
 const copyContentAssets = () => {
   return {
     name: 'copy-content-assets',
     buildStart() {
-      // content配下の画像をすべてコピー
+      // content/blog配下の各記事フォルダ内のassetsをコピー
       const imageFiles = globSync(
-        'content/assets/**/*.{png,jpg,jpeg,gif,svg,webp}'
+        'content/blog/**/assets/**/*.{png,jpg,jpeg,gif,svg,webp}'
       )
       imageFiles.forEach((filePath) => {
-        const relativePath = filePath.replace('content/', 'blog/')
+        // content/blog/2025-03-19-electricity-usage-2024/assets/image.png
+        // → dist/blog/2025-03-19-electricity-usage-2024/assets/image.png
+        const relativePath = filePath.replace('content/blog/', 'blog/')
         const destPath = join('dist', relativePath)
         mkdirSync(dirname(destPath), { recursive: true })
         copyFileSync(filePath, destPath)

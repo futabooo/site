@@ -43,8 +43,8 @@ const blogPostMetaDataSchema = z
     }
   )
 
-// viteのbuild時にすべてのmdファイルを読み込む
-const markdownFiles = import.meta.glob('../../content/blog/**/*.md', {
+// viteのbuild時にすべてのindex.mdファイルを読み込む
+const markdownFiles = import.meta.glob('../../content/blog/**/index.md', {
   eager: true,
   query: '?raw',
   import: 'default',
@@ -52,7 +52,10 @@ const markdownFiles = import.meta.glob('../../content/blog/**/*.md', {
 
 export const allPosts: BlogPost[] = Object.entries(markdownFiles)
   .map(([filePath, raw]) => {
-    const slug = filePath.split('/').pop()?.replace('.md', '') || ''
+    // 例: '../../content/blog/2025-03-19-electricity-usage-2024/index.md'
+    // → '2025-03-19-electricity-usage-2024'
+    const pathParts = filePath.split('/')
+    const slug = pathParts[pathParts.length - 2] || ''
     const { data, content } = matter(raw as string)
     const validatedMetaData = blogPostMetaDataSchema.parse(data)
     return {

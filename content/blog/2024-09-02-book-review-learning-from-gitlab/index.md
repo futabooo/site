@@ -5,7 +5,7 @@ tags: ["Book Review"]
 pubDate: "2024/09/02"
 ---
 
-![読んだ本の表紙](./assets/2024/book-review-learning-from-gitlab/20240902232027.png)
+![読んだ本の表紙](./assets/20240902232027.png)
 
 積読していたのをついに読んだので感想を残す。
 

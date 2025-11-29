@@ -3,7 +3,7 @@ title: "Keyball44を組み立てた"
 description: "Keyball44を組み立てた"
 tags: ["keyboard"]
 pubDate: "2023/10/05"
-eyeCatchImg: "src./assets/2023/build-keyball44-keyboard/20231005021215.jpg"
+eyeCatchImg: "./assets/20231005021215.jpg"
 eyeCatchAlt: "組み立てたkeyball44"
 ---
 
@@ -33,14 +33,14 @@ https://github.com/qmk/qmk_firmware
 ### ボトムプレートにマステを貼る
 
 ボトムプレートにマステを 5 重にはります。テープモッド言われる静音化方法で自作キーボード界隈では一般的なようです。本来は基盤側に春っぽいんですが、凹凸があって貼りづらいのでボトムプレート側にはりましたが問題なさそうです。高音が響く感じが抑えられてスコスコなるような感じになりました。
-![](./assets/2023/build-keyball44-keyboard/20231005023400.jpg "ボトムプレートにマステを貼った")
+![](./assets/20231005023400.jpg "ボトムプレートにマステを貼った")
 
 ### 親指に使ってるキースイッチにマステを貼る
 
 底打ち時の音を軽減するため親指部分に使用した Kailh Sunset Tactile を分解して、写真の白い部分のようにマステを 8 重ではります。
 low profile で静音軸がないので他の指のキーに比べるとまだどうしても音が大きいです。low profile の静音軸だしてほしい。
 
-![](./assets/2023/build-keyball44-keyboard/20231005015936.jpg "Kailh Sunset Tactileを分解してマステを貼った")
+![](./assets/20231005015936.jpg "Kailh Sunset Tactileを分解してマステを貼った")
 
 ## キーマップやレイヤー
 

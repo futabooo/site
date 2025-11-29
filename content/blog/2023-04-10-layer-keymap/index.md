@@ -17,23 +17,23 @@ Choco60 rev.2 は via を使ったキーマップの変更に対応しており�
 
 #### レイヤ −0
 
-<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/2023/layer-keymap/20230410004517.png)</span>
+<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/20230410004517.png)</span>
 
 右手親指のスベース左にあるキーには短く押すとエンター、押しっぱなしにするとレイヤー 2 への切り替えとなるように Any キーを割り当てました。
 
 他のレイヤーに当てたキーを無くすのはまだ怖くてやってないですがレイヤー切り替えになれ始めたら消そうと思います。
 
-<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/2023/layer-keymap/20230410004953.png)</span>
+<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/20230410004953.png)</span>
 
 #### レイヤー 1
 
-<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/2023/layer-keymap/20230410004520.png)</span>
+<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/20230410004520.png)</span>
 
 数字キーや記号を集めたレイヤー
 カッコの左右を手の左右にすることができるのわかりやすそう
 
 #### レイヤー 2
 
-<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/2023/layer-keymap/20230410005138.png)</span>
+<span itemscope="" itemtype="http://schema.org/Photograph">![](./assets/20230410005138.png)</span>
 
 もともと fn キー押しながらやっていたようなキーをここに設定した

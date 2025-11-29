@@ -8,7 +8,7 @@ pubDate: "2023/06/10"
 ## OGImage とは
 
 こういうやつですね。
-![](./assets/2023/create-personal-site-use-astro/20230610002956.png)
+![](./assets/20230610002956.png)
 
 Twitter などにリンクを貼り付けた時に特定の metadata に設定されている URL を表示してくれるやつです。
 
@@ -144,7 +144,7 @@ https://docs.astro.build/en/guides/integrations-guide/react/
 
 https://og-playground.vercel.app/
 
-![OG Image Playground](./assets/2023/create-personal-site-use-astro/20230610002002.png)
+![OG Image Playground](./assets/20230610002002.png)
 
 ## SSG するか SSR するか
 
