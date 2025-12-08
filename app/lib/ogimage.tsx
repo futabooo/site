@@ -1,20 +1,21 @@
 import { loadDefaultJapaneseParser } from 'budoux'
 import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import satori from 'satori'
 import sharp from 'sharp'
 
 const parser = loadDefaultJapaneseParser()
 
-const generate = async (title: string) => {
+export const generateOGImage = async (
+  title: string,
+  fontPath: string,
+  iconPath: string
+): Promise<Buffer> => {
   const words = parser.parse(title)
 
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = path.dirname(__filename)
-  const font = fs.readFileSync(
-    path.resolve(__dirname, 'NotoSansJP-SemiBold.ttf')
-  )
+  const font = fs.readFileSync(fontPath)
+  const iconData = fs.readFileSync(iconPath)
+  const iconBase64 = `data:image/jpeg;base64,${iconData.toString('base64')}`
+
   const svg = await satori(
     <div
       style={{
@@ -54,10 +55,14 @@ const generate = async (title: string) => {
             lineHeight: 1,
           }}
         >
-          {words.map((word) => {
+          {words.map((word, index) => {
             // satoriではinline-blockは使用できないため、明示的にblockを指定する
             // https://github.com/facebook/yoga/issues/968
-            return <span style={{ display: 'block' }}>{word}</span>
+            return (
+              <span key={index} style={{ display: 'block' }}>
+                {word}
+              </span>
+            )
           })}
         </div>
         <div
@@ -70,11 +75,11 @@ const generate = async (title: string) => {
           }}
         >
           <img
-            src='/ic_futabooo_orenge.jpg'
-            width='60'
-            height='60'
+            src={iconBase64}
             alt='futabooo'
             style={{
+              width: 60,
+              height: 60,
               borderRadius: '100%',
               background: 'transparent',
             }}
@@ -104,40 +109,4 @@ const generate = async (title: string) => {
     }
   )
   return await sharp(Buffer.from(svg)).png().toBuffer()
-}
-
-export const createOGImage = ({
-  config,
-}: {
-  config: { path: string }
-}): AstroIntegration => {
-  return {
-    name: 'og-image',
-    hooks: {
-      'astro:build:done': async ({ dir, pages }) => {
-        const blogPages = pages.filter((page) =>
-          page.pathname.includes(config.path)
-        )
-
-        await Promise.all(
-          blogPages.map(async (page) => {
-            const indexHtmlPath = path.join(
-              dir.pathname,
-              page.pathname,
-              'index.html'
-            )
-
-            const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8') as any
-            const title = await indexHtml.match(
-              /<title[^>]*>([^<]+)<\/title>/
-            )[1]
-            const buffer = await generate(title)
-            const filename = path.join(dir.pathname, page.pathname, 'ogp.png')
-            // 非同期のfs.writeFileだと生成がうまく以下あない場合があるので同期的に書き込む
-            fs.writeFileSync(filename, buffer)
-          })
-        )
-      },
-    },
-  }
 }
