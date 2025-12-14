@@ -60,18 +60,24 @@ export const BaseHead = ({
       <link rel='author' href='http://www.hatena.ne.jp/futabooo/' />
 
       {/* Global site tag (gtag.js) - Google Analytics */}
-      <script
-        type='text/partytown'
-        src='https://www.googletagmanager.com/gtag/js?id=G-NCE9S2S68M'
-      ></script>
-      {/* <script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-  gtag("config", "G-NCE9S2S68M");
-</script> */}
+      {import.meta.env.PROD && (
+        <>
+          <script
+            async
+            src='https://www.googletagmanager.com/gtag/js?id=G-NCE9S2S68M'
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-NCE9S2S68M');
+              `,
+            }}
+          />
+        </>
+      )}
     </>
   )
 }
