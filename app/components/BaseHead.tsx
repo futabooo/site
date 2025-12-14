@@ -20,6 +20,12 @@ export const BaseHead = ({
       <meta charset='utf-8' />
       <meta name='viewport' content='width=device-width,initial-scale=1' />
       <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+      <link
+        rel='alternate'
+        type='application/rss+xml'
+        title='RSS Feed'
+        href='/rss.xml'
+      />
       <meta name='generator' content='Hono' />
 
       {/* Canonical URL */}
