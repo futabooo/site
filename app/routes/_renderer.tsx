@@ -1,9 +1,9 @@
-import { ThemeChange } from '@components/$ThemeChange'
 import { BaseHead } from '@components/BaseHead'
 import { Footer } from '@components/Footer'
 import { Navbar } from '@components/Navbar'
-import { Search } from '@components/Search'
+import { ThemeChange } from '@components/ThemeChange'
 import { jsxRenderer } from 'hono/jsx-renderer'
+import { Search } from '@components/Search'
 import { Link, Script } from 'honox/server'
 
 export default jsxRenderer(

@@ -16,7 +16,7 @@ const navItem = [
   },
 ]
 
-export const Navbar = ({ pathName = '/' }: Props) => (
+export const Navbar = ({ pathName = '/', children }: Props) => (
   <div class='navbar bg-base-100'>
     <div class='flex-1'>
       <a
@@ -47,7 +47,7 @@ export const Navbar = ({ pathName = '/' }: Props) => (
           </li>
         ))}
       </ul>
-      <slot />
+      {children}
       <div class='dropdown dropdown-end md:hidden'>
         <button tabindex={0} class='btn btn-ghost btn-square' type='button'>
           <svg
