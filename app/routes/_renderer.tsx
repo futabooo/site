@@ -19,8 +19,8 @@ export default jsxRenderer(
           />
           <Link href='/app/style.css' rel='stylesheet' />
           <Script src='/app/client.ts' async />
-          <Link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
-          <Script src='/pagefind/pagefind-ui.js' async />
+          <link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
+          <script src='/pagefind/pagefind-ui.js' async />
         </head>
         <body class='flex flex-col items-center h-screen'>
           <div class='w-full max-w-3xl flex-grow'>
