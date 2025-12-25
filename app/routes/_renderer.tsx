@@ -23,7 +23,7 @@ export default jsxRenderer(
           <script src='/pagefind/pagefind-ui.js' async />
         </head>
         <body class='flex flex-col items-center h-screen'>
-          <div class='w-full max-w-3xl flex-grow'>
+          <div class='w-full max-w-3xl flex-grow px-6'>
             <Navbar pathName='/'>
               <Search />
               <ThemeChange />
