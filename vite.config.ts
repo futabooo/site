@@ -12,7 +12,9 @@ import {
   readFileSync,
   writeFileSync,
 } from 'node:fs'
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import { dirname, join, resolve } from 'node:path'
+import type { ViteDevServer } from 'vite'
 import { defineConfig } from 'vite'
 import { generateOGImage } from './app/lib/ogimage'
 
@@ -34,6 +36,38 @@ const copyContentAssets = () => {
         const destPath = join('dist', relativePath)
         mkdirSync(dirname(destPath), { recursive: true })
         copyFileSync(filePath, destPath)
+      })
+    },
+  }
+}
+
+// 開発サーバーでpagefindをサーブするプラグイン
+const servePagefind = () => {
+  return {
+    name: 'serve-pagefind',
+    configureServer(server: ViteDevServer) {
+      server.middlewares.use('/pagefind', (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+        // クエリストリングを除去
+        const urlPath = (req.url || '').split('?')[0]
+        const filePath = join('dist/pagefind', urlPath)
+        if (existsSync(filePath)) {
+          const content = readFileSync(filePath)
+          const ext = filePath.split('.').pop() || ''
+          const mimeTypes: Record<string, string> = {
+            js: 'application/javascript',
+            css: 'text/css',
+            json: 'application/json',
+            wasm: 'application/wasm',
+            pagefind: 'application/wasm',
+            pf_fragment: 'application/octet-stream',
+            pf_index: 'application/octet-stream',
+            pf_meta: 'application/octet-stream',
+          }
+          res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream')
+          res.end(content)
+        } else {
+          next()
+        }
       })
     },
   }
@@ -82,7 +116,7 @@ const generateOGImages = () => {
         }
       }
     },
-  }
+  } 
 }
 
 export default defineConfig({
@@ -94,7 +128,7 @@ export default defineConfig({
   },
   server: {
     fs: {
-      allow: ['..', 'content'],
+      allow: ['..', 'content', 'dist'],
     },
   },
   ssr: {
@@ -104,6 +138,7 @@ export default defineConfig({
     include: ['gray-matter', 'marked'],
   },
   plugins: [
+    servePagefind(),
     honox({
       devServer: { adapter },
       client: { input: ['./app/style.css'] },

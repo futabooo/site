@@ -1,5 +1,3 @@
-import { css } from 'hono/css'
-
 export const Search = () => (
   <>
     <button id='search' class='btn btn-square btn-ghost swap' type='button'>
@@ -18,7 +16,10 @@ export const Search = () => (
     <dialog id='searchModal' class='modal'>
       <div class='modal-box'>
         <form method='dialog'>
-          <button class='btn btn-circle btn-ghost btn-xs absolute right-2 top-2' type='button'>
+          <button
+            type='submit'
+            class='btn btn-circle btn-ghost btn-xs absolute right-2 top-2'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               class='fill-current h-4 w-4'
@@ -41,48 +42,28 @@ export const Search = () => (
         <div id='search-box' class='mt-4 mb-2'></div>
       </div>
       <form method='dialog' class='modal-backdrop'>
-        <button type='button'>close</button>
+        <button type='submit'>close</button>
       </form>
     </dialog>
 
-    {/* <script src="/pagefind/pagefind-ui.js"></script>
-<script>
-  document.getElementById("search").addEventListener("click", () => {
-    document.getElementById("searchModal").showModal();
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-    new PagefindUI({ element: "#search-box" });
-  });
-</script> */}
-
-    {/* 
- スタイルを当てるワークアラウンド pagefindのcssをmediaqueriesでは上書きできないため
- ref https://github.com/CloudCannon/pagefind/issues/614#issuecomment-2111199944
-
- !importantをつけることでrootの設定を上書きできるようにしている
-*/}
-    <link rel='stylesheet' href='/pagefind/pagefind-ui.css' />
-    <style className={pagefindUiStyle} />
+    <script dangerouslySetInnerHTML={{ __html: searchScript }} />
   </>
 )
 
-const pagefindUiStyle = css`{
-  [data-theme="night"] {
-    --pagefind-ui-primary: #9ca3af !important;
-    --pagefind-ui-text: #9ca3af !important;
-    --pagefind-ui-background: #0f172a !important;
-    --pagefind-ui-border: #4b5563 !important;
-    --pagefind-ui-tag: #4b5563 !important;
-    --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
-  }
-
-  [data-theme="winter"] {
-    --pagefind-ui-primary: #1f2937 !important;
-    --pagefind-ui-text: #374151 !important;
-    --pagefind-ui-background: #ffffff !important;
-    --pagefind-ui-border: #d1d5db !important;
-    --pagefind-ui-tag: #e5e7eb !important;
-    --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
-  }
-}
+const searchScript = `
+  let pagefindInitialized = false;
+  document.getElementById("search").addEventListener("click", () => {
+    document.getElementById("searchModal").showModal();
+    if (!pagefindInitialized && typeof PagefindUI !== 'undefined') {
+      new PagefindUI({
+        element: "#search-box",
+        processResult: (result) => {
+          // .html拡張子を除去
+          result.url = result.url.replace(/\\.html$/, '');
+          return result;
+        }
+      });
+      pagefindInitialized = true;
+    }
+  });
 `

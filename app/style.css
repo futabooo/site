@@ -120,3 +120,25 @@ https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2250530354
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+
+/* pagefindのスタイル設定
+ * pagefindのcssをmediaqueriesでは上書きできないため!importantを使用
+ * ref: https://github.com/CloudCannon/pagefind/issues/614#issuecomment-2111199944
+ */
+[data-theme="night"] {
+  --pagefind-ui-primary: #9ca3af !important;
+  --pagefind-ui-text: #9ca3af !important;
+  --pagefind-ui-background: #0f172a !important;
+  --pagefind-ui-border: #4b5563 !important;
+  --pagefind-ui-tag: #4b5563 !important;
+  --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
+}
+
+[data-theme="winter"] {
+  --pagefind-ui-primary: #1f2937 !important;
+  --pagefind-ui-text: #374151 !important;
+  --pagefind-ui-background: #ffffff !important;
+  --pagefind-ui-border: #d1d5db !important;
+  --pagefind-ui-tag: #e5e7eb !important;
+  --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
+}
