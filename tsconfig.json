@@ -1,15 +1,32 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
   "compilerOptions": {
-    "strictNullChecks": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "types": [
+      "vite/client",
+      "@cloudflare/workers-types/2023-07-01"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*.astro"],
-      "@layouts/*": ["src/layouts/*.astro"]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  }
+      "@components/*": ["app/components/*.tsx"],
+      "@layouts/*": ["app/layouts/*.tsx"],
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
