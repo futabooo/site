@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build --mode client && vite build && pagefind --site dist",
     "preview": "wrangler dev",
-    "deploy": "bun run build && pagefind --site dist && wrangler deploy"
+    "deploy": "bun run build && wrangler deploy"
   },
   "private": true,
   "dependencies": {

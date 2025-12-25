@@ -51,19 +51,36 @@ export const Search = () => (
 )
 
 const searchScript = `
-  let pagefindInitialized = false;
-  document.getElementById("search").addEventListener("click", () => {
-    document.getElementById("searchModal").showModal();
-    if (!pagefindInitialized && typeof PagefindUI !== 'undefined') {
-      new PagefindUI({
-        element: "#search-box",
-        processResult: (result) => {
-          // .html拡張子を除去
-          result.url = result.url.replace(/\\.html$/, '');
-          return result;
+  (function() {
+    let pagefindInitialized = false;
+
+    function initSearch() {
+      const searchBtn = document.getElementById("search");
+      const searchModal = document.getElementById("searchModal");
+
+      if (!searchBtn || !searchModal) return;
+
+      searchBtn.addEventListener("click", () => {
+        searchModal.showModal();
+        if (!pagefindInitialized && typeof PagefindUI !== 'undefined') {
+          new PagefindUI({
+            element: "#search-box",
+            processResult: (result) => {
+              // .html拡張子を除去
+              result.url = result.url.replace(/\\.html$/, '');
+              return result;
+            }
+          });
+          pagefindInitialized = true;
         }
       });
-      pagefindInitialized = true;
     }
-  });
+
+    // DOMが既にロード済みか確認
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSearch);
+    } else {
+      initSearch();
+    }
+  })();
 `
