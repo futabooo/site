@@ -124,6 +124,7 @@ export default defineConfig({
     alias: {
       '@components': '/app/components',
       '@layouts': '/app/layouts',
+      'highlight.js/styles': resolve('node_modules/highlight.js/styles'),
     },
   },
   server: {
