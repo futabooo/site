@@ -1,5 +1,8 @@
-import { default as matter } from 'gray-matter'
-import { z } from 'zod'
+import { default as matter } from 'gray-matter';
+import hljs from 'highlight.js';
+import { Marked } from 'marked';
+import { markedHighlight } from "marked-highlight";
+import { z } from 'zod';
 
 export interface BlogPost {
   id: string
@@ -58,10 +61,22 @@ export const allPosts: BlogPost[] = Object.entries(markdownFiles)
     const slug = pathParts[pathParts.length - 2] || ''
     const { data, content } = matter(raw as string)
     const validatedMetaData = blogPostMetaDataSchema.parse(data)
+    const marked = new Marked(
+      markedHighlight({
+      emptyLangClass: 'hljs',
+        langPrefix: 'hljs language-',
+        highlight(code, lang, info) {
+          const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+          return hljs.highlight(code, { language }).value;
+        }
+      })
+    );
+    const html = marked.parse(content,{async: false})
+
     return {
       id: slug,
       data: validatedMetaData,
-      html: content,
+      html: html,
     }
   })
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())

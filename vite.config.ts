@@ -132,7 +132,7 @@ export default defineConfig({
     },
   },
   ssr: {
-    external: ['gray-matter', 'marked'],
+    external: ['gray-matter', 'marked', 'highlight.js'],
   },
   optimizeDeps: {
     include: ['gray-matter', 'marked'],
