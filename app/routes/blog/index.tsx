@@ -1,9 +1,9 @@
 import { BlogListItem } from '@components/BlogListItem'
 import { createRoute } from 'honox/factory'
+import { SITE_URL } from '../../consts'
 import { allPosts } from '../../lib/blog'
 
 export default createRoute(async (c) => {
-  const url = c.req.url
   const posts = allPosts
 
   return c.render(
@@ -15,7 +15,7 @@ export default createRoute(async (c) => {
     {
       title: 'Blog - futabooo.com',
       description: 'Blog - futabooo.com',
-      canonicalURL: new URL(url),
+      canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
     }
   )
 })

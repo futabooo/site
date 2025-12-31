@@ -1,4 +1,5 @@
 import { createRoute } from 'honox/factory'
+import { SITE_URL } from '../consts'
 import { asHTML } from '../lib/about'
 
 export default createRoute(async (c) => {
@@ -11,7 +12,7 @@ export default createRoute(async (c) => {
     {
       title: 'About - futabooo.com',
       description: 'About - futabooo.com',
-      canonicalURL: new URL(c.req.url),
+      canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
     }
   )
 })
