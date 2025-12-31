@@ -1,3 +1,5 @@
+import { SITE_URL } from '../consts'
+
 interface Props {
   title?: string
   description?: string
@@ -5,8 +7,8 @@ interface Props {
   canonicalURL?: URL
 }
 
-const DEFAULT_IMAGE = new URL('/ogp.png', import.meta.url)
-const DEFAULT_CANONICAL_URL = new URL('/', import.meta.url)
+const DEFAULT_IMAGE = new URL('/ogp.png', SITE_URL)
+const DEFAULT_CANONICAL_URL = new URL('/', SITE_URL)
 
 export const BaseHead = ({
   title = "futabooo's Blog",

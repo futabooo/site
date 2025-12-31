@@ -1,6 +1,7 @@
 import { BlogListItem } from '@components/BlogListItem'
 import { ssgParams } from 'hono/ssg'
 import { createRoute } from 'honox/factory'
+import { SITE_URL } from '../../consts'
 import { allTags, getPostsByTag } from '../../lib/blog'
 
 export default createRoute(
@@ -22,7 +23,7 @@ export default createRoute(
       {
         title: `Tag: ${tag} - futabooo.com`,
         description: `Tag: ${tag} - futabooo.com`,
-        canonicalURL: new URL(c.req.url),
+        canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
       }
     )
   }

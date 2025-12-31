@@ -1,6 +1,7 @@
 import { BlogListItemSmall } from '@components/BlogListItemSmall'
 import { TagBadge } from '@components/TagBadge'
 import { createRoute } from 'honox/factory'
+import { SITE_URL } from '../consts'
 import { allPosts } from '../lib/blog'
 
 export default createRoute(async (c) => {
@@ -53,7 +54,7 @@ export default createRoute(async (c) => {
     {
       title: 'futabooo.com',
       description: 'Home - futabooo.com',
-      canonicalURL: new URL(c.req.url),
+      canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
     }
   )
 })

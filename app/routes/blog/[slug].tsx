@@ -2,6 +2,7 @@ import { BlogPost } from '@layouts/BlogPost'
 import { ssgParams } from 'hono/ssg'
 import { createRoute } from 'honox/factory'
 import { marked } from 'marked'
+import { SITE_URL } from '../../consts'
 import { allPosts, getPostById } from '../../lib/blog'
 
 export default createRoute(
@@ -37,7 +38,7 @@ export default createRoute(
         title: `${post.data.title} - futabooo.com`,
         description: `${post.data.description} - futabooo.com`,
         image: post.data.eyeCatchImg ?? `/blog/${post.id}/ogp.png`,
-        canonicalURL: new URL(c.req.url),
+        canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
       }
     )
   }
