@@ -30,7 +30,7 @@ export default createRoute(
       <BlogPost
         blogData={post.data}
         ogImage={`/blog/${post.id}/ogp.png`}
-        url={`/blog/${post.id}`}
+        url={new URL(new URL(c.req.url).pathname, SITE_URL)}
       >
         {html}
       </BlogPost>,
