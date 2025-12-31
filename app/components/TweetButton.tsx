@@ -12,9 +12,9 @@ import { IC_TWITTER } from '../consts'
 //   }
 // `
 
-export const TweetButton = ({ title, url }: { title: string; url: string }) => (
+export const TweetButton = ({ title, url }: { title: string; url: URL }) => (
   <a
-    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`}
+    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url.toString())}`}
   >
     <button className='btn btn-outline gap-2' type='button'>
       <img className='w-4 h-4' src={`/${IC_TWITTER}`} alt='Twitter' />

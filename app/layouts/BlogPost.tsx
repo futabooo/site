@@ -6,7 +6,7 @@ import type { BlogPostMetaData } from '../lib/blog'
 interface Props {
   blogData: BlogPostMetaData
   ogImage: string
-  url: string
+  url: URL
 }
 
 export const BlogPost = ({
