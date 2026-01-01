@@ -17,7 +17,7 @@ export const BlogPost = ({
 }: PropsWithChildren<Props>) => {
   return (
     <div class='w-full max-w-3xl flex-grow'>
-      <div class='p-4 pt-6 pb-2'>
+      <div class='pt-6 pb-2'>
         <div>
           <article
             class='prose max-w-none'
