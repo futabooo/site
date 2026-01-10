@@ -18,7 +18,6 @@ export default createRoute(
       c.status(404)
       return c.text('Not Found')
     }
-    // let html = await marked(post.html)
     // マークダウン内の相対パスを絶対パスに変換
     // ./assets/image.png -> /blog/{slug}/assets/image.png
     const html = post.html.replace(
