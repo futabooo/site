@@ -1,7 +1,6 @@
 import { BlogPost } from '@layouts/BlogPost'
 import { ssgParams } from 'hono/ssg'
 import { createRoute } from 'honox/factory'
-import { marked } from 'marked'
 import { SITE_URL } from '../../consts'
 import { allPosts, getPostById } from '../../lib/blog'
 
@@ -19,10 +18,9 @@ export default createRoute(
       c.status(404)
       return c.text('Not Found')
     }
-    let html = await marked(post.html)
     // マークダウン内の相対パスを絶対パスに変換
     // ./assets/image.png -> /blog/{slug}/assets/image.png
-    html = html.replace(
+    const html = post.html.replace(
       /src="\.\/assets\/([^"]+)"/g,
       `src="/blog/${post.id}/assets/$1"`
     )

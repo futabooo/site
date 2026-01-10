@@ -124,6 +124,7 @@ export default defineConfig({
     alias: {
       '@components': '/app/components',
       '@layouts': '/app/layouts',
+      'highlight.js/styles': resolve('node_modules/highlight.js/styles'),
     },
   },
   server: {
@@ -132,7 +133,7 @@ export default defineConfig({
     },
   },
   ssr: {
-    external: ['gray-matter', 'marked'],
+    external: ['gray-matter', 'marked', 'highlight.js'],
   },
   optimizeDeps: {
     include: ['gray-matter', 'marked'],
