@@ -1,6 +1,5 @@
-@import 'tailwindcss' source('../app');
-@import "highlight.js/styles/tokyo-night-dark.css";
-@import "highlight.js/styles/tokyo-night-light.css";
+@import "tailwindcss" source('../app');
+@import "highlight.js/styles/vs2015.css";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: winter, night;
