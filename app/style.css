@@ -1,4 +1,6 @@
 @import 'tailwindcss' source('../app');
+@import "highlight.js/styles/tokyo-night-dark.css";
+@import "highlight.js/styles/tokyo-night-light.css";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: winter, night;
@@ -138,6 +140,81 @@ https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2250530354
   --pagefind-ui-tag: #4b5563 !important;
   --pagefind-ui-font:
     Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
+}
+
+/* highlight.jsでダークテーマとライトテーマを切り替えられるようにする */
+[data-theme="night"] .hljs-meta,
+[data-theme="night"] .hljs-comment {
+  color: #565f89;
+}
+[data-theme="night"] .hljs-tag,
+[data-theme="night"] .hljs-doctag,
+[data-theme="night"] .hljs-selector-id,
+[data-theme="night"] .hljs-selector-class,
+[data-theme="night"] .hljs-regexp,
+[data-theme="night"] .hljs-template-tag,
+[data-theme="night"] .hljs-selector-pseudo,
+[data-theme="night"] .hljs-selector-attr,
+[data-theme="night"] .hljs-variable.language_,
+[data-theme="night"] .hljs-deletion {
+  color: #f7768e;
+}
+[data-theme="night"] .hljs-variable,
+[data-theme="night"] .hljs-template-variable,
+[data-theme="night"] .hljs-number,
+[data-theme="night"] .hljs-literal,
+[data-theme="night"] .hljs-type,
+[data-theme="night"] .hljs-params,
+[data-theme="night"] .hljs-link {
+  color: #ff9e64;
+}
+[data-theme="night"] .hljs-built_in,
+[data-theme="night"] .hljs-attribute {
+  color: #e0af68;
+}
+[data-theme="night"] .hljs-selector-tag {
+  color: #73daca;
+}
+[data-theme="night"] .hljs-keyword,
+[data-theme="night"] .hljs-title.function_,
+[data-theme="night"] .hljs-title,
+[data-theme="night"] .hljs-title.class_,
+[data-theme="night"] .hljs-title.class_.inherited__,
+[data-theme="night"] .hljs-subst,
+[data-theme="night"] .hljs-property {
+  color: #7dcfff;
+}
+[data-theme="night"] .hljs-quote,
+[data-theme="night"] .hljs-string,
+[data-theme="night"] .hljs-symbol,
+[data-theme="night"] .hljs-bullet,
+[data-theme="night"] .hljs-addition {
+  color: #9ece6a;
+}
+[data-theme="night"] .hljs-code,
+[data-theme="night"] .hljs-formula,
+[data-theme="night"] .hljs-section {
+  color: #7aa2f7;
+}
+[data-theme="night"] .hljs-name,
+[data-theme="night"] .hljs-keyword,
+[data-theme="night"] .hljs-operator,
+[data-theme="night"] .hljs-char.escape_,
+[data-theme="night"] .hljs-attr {
+  color: #bb9af7;
+}
+[data-theme="night"] .hljs-punctuation {
+  color: #c0caf5;
+}
+[data-theme="night"] .hljs {
+  background: #1a1b26;
+  color: #9aa5ce;
+}
+[data-theme="night"] .hljs-emphasis {
+  font-style: italic;
+}
+[data-theme="night"] .hljs-strong {
+  font-weight: bold;
 }
 
 [data-theme="winter"] {
