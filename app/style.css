@@ -1,10 +1,8 @@
-
 @import 'tailwindcss' source('../app');
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: winter --default, night --prefersdark;
+  themes: winter, night;
 }
-
 
 :root {
   font-family:
@@ -32,7 +30,14 @@
 DaisyUI V5でなおるっぽい
 https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2250530354
 */
-:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+:root:has(
+    :is(
+        .modal-open,
+        .modal:target,
+        .modal-toggle:checked + .modal,
+        .modal[open]
+      )
+  ) {
   scrollbar-gutter: stable both-edges;
 }
 
@@ -131,7 +136,8 @@ https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2250530354
   --pagefind-ui-background: #0f172a !important;
   --pagefind-ui-border: #4b5563 !important;
   --pagefind-ui-tag: #4b5563 !important;
-  --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
+  --pagefind-ui-font:
+    Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
 }
 
 [data-theme="winter"] {
@@ -140,5 +146,6 @@ https://github.com/saadeghi/daisyui/issues/3040#issuecomment-2250530354
   --pagefind-ui-background: #ffffff !important;
   --pagefind-ui-border: #d1d5db !important;
   --pagefind-ui-tag: #e5e7eb !important;
-  --pagefind-ui-font: Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
+  --pagefind-ui-font:
+    Noto Sans JP, Proxima Nova, system-ui, sans-serif !important;
 }

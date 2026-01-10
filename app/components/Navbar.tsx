@@ -17,7 +17,7 @@ const navItem = [
 ]
 
 export const Navbar = ({ pathName = '/', children }: Props) => (
-  <div class='navbar bg-base-100'>
+  <div class='navbar'>
     <div class='flex-1'>
       <a
         href='/'
