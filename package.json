@@ -9,7 +9,7 @@
   },
   "private": true,
   "dependencies": {
-    "@hono/vite-ssg": "^0.2.1",
+    "@hono/vite-ssg": "^0.3.0",
     "budoux": "^0.7.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
