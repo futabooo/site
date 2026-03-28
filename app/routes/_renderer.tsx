@@ -7,7 +7,8 @@ import { jsxRenderer } from 'hono/jsx-renderer'
 import { Link, Script } from 'honox/server'
 
 export default jsxRenderer(
-  ({ children, title, description, image, canonicalURL }) => {
+  ({ children, title, description, image, canonicalURL }, c) => {
+    const pathName = new URL(c.req.url).pathname
     return (
       <html lang='ja'>
         <head>
@@ -24,7 +25,7 @@ export default jsxRenderer(
         </head>
         <body class='flex flex-col items-center h-screen'>
           <div class='w-full max-w-3xl flex-grow px-6'>
-            <Navbar pathName='/'>
+            <Navbar pathName={pathName}>
               <Search />
               <ThemeChange />
             </Navbar>

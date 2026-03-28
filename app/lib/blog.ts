@@ -1,8 +1,8 @@
-import { default as matter } from 'gray-matter';
-import hljs from 'highlight.js';
-import { Marked } from 'marked';
-import { markedHighlight } from "marked-highlight";
-import { z } from 'zod';
+import { default as matter } from 'gray-matter'
+import hljs from 'highlight.js'
+import { Marked } from 'marked'
+import { markedHighlight } from 'marked-highlight'
+import { z } from 'zod'
 
 export interface BlogPost {
   id: string
@@ -46,6 +46,17 @@ const blogPostMetaDataSchema = z
     }
   )
 
+const marked = new Marked(
+  markedHighlight({
+    emptyLangClass: 'hljs',
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+      return hljs.highlight(code, { language }).value
+    },
+  })
+)
+
 // viteのbuild時にすべてのindex.mdファイルを読み込む
 const markdownFiles = import.meta.glob('../../content/blog/**/index.md', {
   eager: true,
@@ -61,17 +72,7 @@ export const allPosts: BlogPost[] = Object.entries(markdownFiles)
     const slug = pathParts[pathParts.length - 2] || ''
     const { data, content } = matter(raw as string)
     const validatedMetaData = blogPostMetaDataSchema.parse(data)
-    const marked = new Marked(
-      markedHighlight({
-      emptyLangClass: 'hljs',
-        langPrefix: 'hljs language-',
-        highlight(code, lang, info) {
-          const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-          return hljs.highlight(code, { language }).value;
-        }
-      })
-    );
-    const html = marked.parse(content,{async: false})
+    const html = marked.parse(content, { async: false })
 
     return {
       id: slug,
@@ -87,7 +88,7 @@ export function getPostById(id: string) {
   return allPosts.find((post) => post.id === id) || null
 }
 
-export async function getPostsByTag(tag: string) {
+export function getPostsByTag(tag: string) {
   return allPosts.filter((post) => post.data.tags.includes(tag))
 }
 

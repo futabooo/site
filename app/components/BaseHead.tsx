@@ -28,6 +28,7 @@ export const BaseHead = ({
         title='RSS Feed'
         href='/rss.xml'
       />
+      <link rel='sitemap' type='application/xml' href='/sitemap.xml' />
       <meta name='generator' content='Hono' />
 
       {/* Canonical URL */}
