@@ -1,8 +1,9 @@
+import type { Child } from 'hono/jsx'
 import { IC_FUTABOOO, SITE_TITLE } from '../consts'
 
 interface Props {
   pathName?: string
-  children?: any
+  children?: Child
 }
 
 const navItem = [
