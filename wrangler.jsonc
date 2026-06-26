@@ -8,16 +8,19 @@
   ],
   "assets": {
     "directory": "./dist"
-  }
+  },
+  // 記事ごとのいいね(拍手)数を保存するKV。
+  // id=本番(wrangler deploy), preview_id=ローカル/プレビュー(wrangler dev)
+  "kv_namespaces": [
+    {
+      "binding": "LIKES",
+      "id": "a771f7a60bcc41ec9f4dc9b649169097",
+      "preview_id": "b799299d73a249a79e43e445d15d5868"
+    }
+  ]
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
   // "r2_buckets": [
   //   {
   //     "binding": "MY_BUCKET",

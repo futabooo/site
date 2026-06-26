@@ -10,7 +10,10 @@ type Head = {
 declare module 'hono' {
   interface Env {
     Variables: {}
-    Bindings: {}
+    Bindings: {
+      // 記事ごとのいいね(拍手)数を保存するKVネームスペース
+      LIKES: KVNamespace
+    }
   }
   interface ContextRenderer {
     // biome-ignore lint/style/useShorthandFunctionType: <explanation>

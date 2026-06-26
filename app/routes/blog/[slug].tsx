@@ -29,6 +29,7 @@ export default createRoute(
         blogData={post.data}
         ogImage={`/blog/${post.id}/ogp.png`}
         url={new URL(new URL(c.req.url).pathname, SITE_URL)}
+        slug={post.id}
       >
         {html}
       </BlogPost>,

@@ -1,18 +1,21 @@
 import { FormattedDate } from '@components/FormattedDate'
 import { TweetButton } from '@components/TweetButton'
 import type { PropsWithChildren } from 'hono/jsx'
+import FavoriteButton from '../islands/FavoriteButton'
 import type { BlogPostMetaData } from '../lib/blog'
 
 interface Props {
   blogData: BlogPostMetaData
   ogImage: string
   url: URL
+  slug: string
 }
 
 export const BlogPost = ({
   blogData,
   ogImage,
   url,
+  slug,
   children,
 }: PropsWithChildren<Props>) => {
   return (
@@ -46,7 +49,8 @@ export const BlogPost = ({
           </article>
         </div>
       </div>
-      <div class='pb-10 flex justify-center'>
+      <div class='pb-10 flex justify-center gap-4'>
+        <FavoriteButton slug={slug} />
         <TweetButton title={blogData.title} url={url} />
       </div>
     </div>
