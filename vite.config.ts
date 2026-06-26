@@ -142,7 +142,8 @@ export default defineConfig({
     servePagefind(),
     honox({
       devServer: { adapter },
-      client: { input: ['./app/style.css'] },
+      // island のハイドレーション用に /app/client.ts を含める必要がある
+      client: { input: ['/app/client.ts', './app/style.css'] },
     }),
     ssg({
       entry,
