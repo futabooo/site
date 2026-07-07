@@ -37,6 +37,11 @@
       "trailingCommas": "es5"
     }
   },
+  "json": {
+    "formatter": {
+      "trailingCommas": "all"
+    }
+  },
   "css": {
     "parser": {
       "tailwindDirectives": true

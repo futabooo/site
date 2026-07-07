@@ -9,20 +9,37 @@ export const Footer = () => {
       <div class='w-full max-w-3xl'>
         <nav class='grid grid-flow-col gap-4'>
           <div class='w-7'>
-            <Social platform='twitter' username={SITE_AUTHOR} imgPath={IC_TWITTER} />
+            <Social
+              platform='twitter'
+              username={SITE_AUTHOR}
+              imgPath={IC_TWITTER}
+            />
           </div>
 
-          <Social platform='github' username={SITE_AUTHOR} imgPath={IC_GITHUB} />
+          <Social
+            platform='github'
+            username={SITE_AUTHOR}
+            imgPath={IC_GITHUB}
+          />
         </nav>
 
         <aside>
           <p class='text-xs'>
             &copy;{today.getFullYear()}&nbsp;
-            <a class='link' href={`https://twitter.com/${SITE_AUTHOR}`} target='_blank'>
+            <a
+              class='link'
+              href={`https://twitter.com/${SITE_AUTHOR}`}
+              target='_blank'
+            >
               {SITE_AUTHOR}
             </a>
             &nbsp;All rights reserved. Powered by
-            <a class='link' href='https://hono.dev/' target='_blank' rel='noopener noreferrer'>
+            <a
+              class='link'
+              href='https://hono.dev/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               {' '}
               Hono
             </a>

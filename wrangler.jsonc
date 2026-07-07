@@ -3,14 +3,12 @@
   "name": "site",
   "main": "./dist/index.js",
   "compatibility_date": "2025-09-20",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./dist",
     // /api/* は静的アセット層(GET/HEADのみ)ではなくWorkerを先に通す。
     // これが無いと本番で /api/* へのPOSTがアセット層に弾かれ405になる。
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": ["/api/*"],
   },
   // 記事ごとのいいね(拍手)数を保存するKV。
   // id=本番(wrangler deploy), preview_id=ローカル/プレビュー(wrangler dev)
@@ -18,9 +16,9 @@
     {
       "binding": "LIKES",
       "id": "a771f7a60bcc41ec9f4dc9b649169097",
-      "preview_id": "b799299d73a249a79e43e445d15d5868"
-    }
-  ]
+      "preview_id": "b799299d73a249a79e43e445d15d5868",
+    },
+  ],
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },

@@ -46,29 +46,35 @@ const servePagefind = () => {
   return {
     name: 'serve-pagefind',
     configureServer(server: ViteDevServer) {
-      server.middlewares.use('/pagefind', (req: IncomingMessage, res: ServerResponse, next: () => void) => {
-        // クエリストリングを除去
-        const urlPath = (req.url || '').split('?')[0]
-        const filePath = join('dist/pagefind', urlPath)
-        if (existsSync(filePath)) {
-          const content = readFileSync(filePath)
-          const ext = filePath.split('.').pop() || ''
-          const mimeTypes: Record<string, string> = {
-            js: 'application/javascript',
-            css: 'text/css',
-            json: 'application/json',
-            wasm: 'application/wasm',
-            pagefind: 'application/wasm',
-            pf_fragment: 'application/octet-stream',
-            pf_index: 'application/octet-stream',
-            pf_meta: 'application/octet-stream',
+      server.middlewares.use(
+        '/pagefind',
+        (req: IncomingMessage, res: ServerResponse, next: () => void) => {
+          // クエリストリングを除去
+          const urlPath = (req.url || '').split('?')[0]
+          const filePath = join('dist/pagefind', urlPath)
+          if (existsSync(filePath)) {
+            const content = readFileSync(filePath)
+            const ext = filePath.split('.').pop() || ''
+            const mimeTypes: Record<string, string> = {
+              js: 'application/javascript',
+              css: 'text/css',
+              json: 'application/json',
+              wasm: 'application/wasm',
+              pagefind: 'application/wasm',
+              pf_fragment: 'application/octet-stream',
+              pf_index: 'application/octet-stream',
+              pf_meta: 'application/octet-stream',
+            }
+            res.setHeader(
+              'Content-Type',
+              mimeTypes[ext] || 'application/octet-stream'
+            )
+            res.end(content)
+          } else {
+            next()
           }
-          res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream')
-          res.end(content)
-        } else {
-          next()
         }
-      })
+      )
     },
   }
 }
@@ -116,7 +122,7 @@ const generateOGImages = () => {
         }
       }
     },
-  } 
+  }
 }
 
 export default defineConfig({
