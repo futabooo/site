@@ -46,5 +46,15 @@
     "parser": {
       "tailwindDirectives": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["package.json"],
+      "json": {
+        "formatter": {
+          "trailingCommas": "none"
+        }
+      }
+    }
+  ]
 }
