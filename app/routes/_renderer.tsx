@@ -19,7 +19,10 @@ export default jsxRenderer(
             canonicalURL={canonicalURL}
           />
           <Link href='/app/style.css' rel='stylesheet' />
-          <Script src='/app/client.ts' async />
+          {/* asyncを付けるとHTML解析完了前にcreateClient()が実行され、
+              ページ下部のislandを取りこぼすレースが起きるので付けない
+              (type=moduleはデフォルトでdefer相当なので実行は解析完了後になる) */}
+          <Script src='/app/client.ts' />
           <link href='/pagefind/pagefind-ui.css' rel='stylesheet' />
           <script src='/pagefind/pagefind-ui.js' async />
         </head>
