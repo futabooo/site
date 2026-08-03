@@ -1,0 +1,220 @@
+{
+  "http://futabooo.hatenablog.com/entry/2022/12/30/235127": {
+    "url": "http://futabooo.hatenablog.com/entry/2022/12/30/235127",
+    "title": "2022年に買ってよかったもの - futabooo blog",
+    "description": "今年買ってよかったものをまとめてみます。 昨年のリンクも置いておこうかと思ったのですが、昨年は書いてませんでしたorz 家電 popIn Aladdin 2 Aladdin Connector EH-NA0J-A WH-1000XM5 MATECH BrightBar Remote SOGU 9°ブックストッパー キッチン用品 ティファール フライパン 育児用品 グスケット チェアベルト 家電 popIn Aladdin 2 天井のシーリングにつけるタイプのプロジェクターです。。リビング横のスペースに設置しています。 僕が買ったタイプはもう買えないっぽいですね。2Plusっていうのが後継機みた…",
+    "image": "https://cdn.image.st-hatena.com/image/scale/26aa2296719bb57c4889ee51099e42e654128185/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fm.media-amazon.com%2Fimages%2FI%2F31jSSNFTNXL._SL500_.jpg"
+  },
+  "https://10x.co.jp/blog/10xblog/10x-real-futabooo/": {
+    "url": "https://10x.co.jp/blog/10xblog/10x-real-futabooo/",
+    "title": "チームが合併する時にやったこと 〜共通認識、ナレッジ交換〜 | 株式会社10X",
+    "description": "「10Xの中の人、中のこと。」シリーズでは、10Xの各メンバーが社内の業務や組織、イベントなどについて自由にリアルに執筆していきます！ 今回は、ソフトウェアエンジニア 二川隆浩（@futabooo）が担当します。",
+    "image": "https://images.microcms-assets.io/assets/31e4bdb3f723445fb7d2ee7d755cef73/365ba062bbec4d539b60183944d1bf5a/20250828_v2.png"
+  },
+  "https://2024.flutterkaigi.jp/session/00af53a6-db85-46b9-a10b-e92a6b1232a4": {
+    "ok": false
+  },
+  "https://amzn.to/3Xqy5NK": {
+    "ok": false
+  },
+  "https://amzn.to/49WMrtW": {
+    "ok": false
+  },
+  "https://developer.chrome.com/docs/extensions/reference/api/storage?hl=ja": {
+    "url": "https://developer.chrome.com/docs/extensions/reference/api/storage?hl=ja",
+    "title": "chrome.storage | API | Chrome for Developers"
+  },
+  "https://docs.astro.build/en/core-concepts/endpoints/": {
+    "url": "https://docs.astro.build/en/core-concepts/endpoints/",
+    "title": "Endpoints",
+    "description": "Learn how to create endpoints that serve any kind of data",
+    "image": "https://docs.astro.build/open-graph/en/guides/endpoints.webp"
+  },
+  "https://docs.astro.build/en/guides/integrations-guide/react/": {
+    "url": "https://docs.astro.build/en/guides/integrations-guide/react/",
+    "title": "@astrojs/react",
+    "description": "Learn how to use the @astrojs/react framework integration to extend component support in your Astro project.",
+    "image": "https://docs.astro.build/open-graph/en/guides/integrations-guide/react.webp"
+  },
+  "https://docs.astro.build/en/reference/integrations-reference/": {
+    "url": "https://docs.astro.build/en/reference/integrations-reference/",
+    "title": "Astro Integration API",
+    "image": "https://docs.astro.build/open-graph/en/reference/integrations-reference.webp"
+  },
+  "https://docs.renovatebot.com/configuration-options/#configuration-options": {
+    "url": "https://docs.renovatebot.com/configuration-options/#configuration-options",
+    "title": "Configuration Options - Renovate Docs",
+    "description": "Configuration Options usable in renovate.json or package.json"
+  },
+  "https://fortee.jp/emconf-2026/proposal/c74e67b4-8575-4950-a391-8c732886c44c": {
+    "url": "https://fortee.jp/emconf-2026/proposal/c74e67b4-8575-4950-a391-8c732886c44c",
+    "title": "俯瞰して支援し、いざとなれば先陣を切ってチームを機能させる ~スクラムマスター出身EM1年生の苦悩と学び~",
+    "description": "# 概要 あなたのチームは機能していますか？ この問いは書籍（ https://www.amazon.co.jp/dp/B0142S78BO ）のタイトルでもあります。 長く働いていると、チームの状態が常に同じであることはありません。変化のたびに、スクラムマスターとして、あるいはエンジニアリングマネージャー（以下、EM）として、どのように対応するのが正解なのでしょうか。 本セッションでは、スクラムマスターとしてチームや開発プロセスを「俯瞰して支援」してきた経験を土台に、EMとして「いざとなれば先陣を切る」ことでチームの成果と成長に挑んできた、この1年の実践を紹介します。スクラムマスターとEMの共通点と違いに触れつつ、その時々で「正解」と信じて選択した対応の苦悩や学びをお話しします。 # アジェンダ（予定） - スクラムマスターとしてのこれまでの活動 - チーム構成の変更に伴うEMの引き継ぎ - 既に決まっていた半期フォーカスを達成するために行ったこと - チーム合併と、異なるケイパビリティを持つメンバー合流への対応 - メンバー退職時にチームのケイパビリティを確保するために行ったこと - メンバーからの評価を集めて実施した「ひとりふりかえり」 - まとめと今後 # Learning Outcome ## 対象の聴衆 役割に関わらず、チームのために活動している人、または活動したい人 ## その人たちが得られるもの ひとりのEMが実務で直面した苦悩と学びの事例から、変化期に効く判断と運用のヒントを持ち帰れます",
+    "image": "https://fortee.jp/emconf-2026/proposal/og-image/c74e67b4-8575-4950-a391-8c732886c44c.png"
+  },
+  "https://futabooo.hatenablog.com/entry/2022/05/30/020313": {
+    "url": "https://futabooo.hatenablog.com/entry/2022/05/30/020313",
+    "title": "電気代見直しのために直近３ヶ月を振り返る - futabooo blog",
+    "description": "※追記 公開後に計算間違ってたことがわかったので表を更新した。今の生活のままだと会社とプラン変えるだけでは安くならなさそう、、、 固定費の見直しをするためにひとまず電気代見直しをしてみました まずは現状を把握しないことには改善もできないので直近3ヶ月の時間帯別使用量を出してみるとこんな感じでした。こうまで時間帯の傾向がちゃんとでるのおもろい いま使ってる東京ガスのずっとも電気1プランとその実績を元にシン・エナジーの基本プラン、夜生活フィットプランだった場合で比較をしてみたのがこちらです。そもそも電気使いすぎでは？みたいのはまぁあるけど寒い時期で暖房ガンガンつけてたのでしょうがないね 18-22…",
+    "image": "https://cdn.image.st-hatena.com/image/scale/3f298e9b55ecb93666a04b357b2e16e1c8c6b448/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Ff%2Ffutabooo%2F20220530%2F20220530013212.png"
+  },
+  "https://github.blog/changelog/2024-03-25-github-pages-with-custom-github-actions-workflows-are-now-generally-available/": {
+    "url": "https://github.blog/changelog/2024-03-25-github-pages-with-custom-github-actions-workflows-are-now-generally-available/",
+    "title": "GitHub Pages with Custom GitHub Actions Workflows are now generally available - GitHub Changelog",
+    "description": "Custom GitHub Actions Workflows for GitHub Pages is now generally available! Experience enhanced flexibility and control over your deployment process today. Learn more Resources: Learn about Pages Learn how to&hellip;",
+    "image": "https://github.blog/wp-content/themes/github-2021-child/dist/img/social-v3-new-releases.jpg"
+  },
+  "https://github.com/CloudCannon/pagefind/issues/614#issuecomment-2111199944": {
+    "ok": false
+  },
+  "https://github.com/bufbuild/buf": {
+    "url": "https://github.com/bufbuild/buf",
+    "title": "GitHub - bufbuild/buf: The best way of working with Protocol Buffers.",
+    "description": "The best way of working with Protocol Buffers. Contribute to bufbuild/buf development by creating an account on GitHub.",
+    "image": "https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/212465715/20893a41-ce7a-4929-9c11-6f19a7295d6f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260803T135000Z&X-Amz-Expires=300&X-Amz-Signature=377c41da5ac49688c9c697f117aec0bd85a410e47b9bc76b2256fe23daf6c919&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTc2NTMwMCwibmJmIjoxNzg1NzY1MDAwLCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.Ods1xrv7KBQlHCNwQzOd8UHkE_KKLGxKRjiiJL3B4-U"
+  },
+  "https://github.com/futabooo/astro-blog/commit/f3e794baa954353ff78d169710ae4a6c625df7ab": {
+    "url": "https://github.com/futabooo/astro-blog/commit/f3e794baa954353ff78d169710ae4a6c625df7ab",
+    "title": "linkをcard形式で表示できるようにする · futabooo/site@f3e794b",
+    "description": "My Personal Site Powered by HonoX. Contribute to futabooo/site development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/f10b5b8618ab66c86c17236ec941f30497bb595b67ad249a39f5c90c4a4ec52f/futabooo/site/commit/f3e794baa954353ff78d169710ae4a6c625df7ab"
+  },
+  "https://github.com/futabooo/junitify-dart": {
+    "url": "https://github.com/futabooo/junitify-dart",
+    "title": "GitHub - futabooo/junitify-dart: A CLI tool to convert Dart test JSON output to JUnit XML format",
+    "description": "A CLI tool to convert Dart test JSON output to JUnit XML format - futabooo/junitify-dart",
+    "image": "https://opengraph.githubassets.com/9b6159455611d6611bc84ac884824de2d7116fd1c9d26380ff0a8bd8db61d9ea/futabooo/junitify-dart"
+  },
+  "https://github.com/futabooo/notion-bar-colorize": {
+    "url": "https://github.com/futabooo/notion-bar-colorize",
+    "title": "GitHub - futabooo/notion-bar-colorize: Chrome Extension for changing Notion Topbar and Sidebar color",
+    "description": "Chrome Extension for changing Notion Topbar and Sidebar color - futabooo/notion-bar-colorize",
+    "image": "https://opengraph.githubassets.com/9d690d1c3ea3842e4fe479faf8d9f2aa511a79fe74654aa6850d9233e3ae2344/futabooo/notion-bar-colorize"
+  },
+  "https://github.com/futabooo/qmk-firmware-keyball44": {
+    "url": "https://github.com/futabooo/qmk-firmware-keyball44",
+    "title": "GitHub - futabooo/qmk-firmware-keyball44: keyball is split keyboard has 100% track ball",
+    "description": "keyball is split keyboard has 100% track ball. Contribute to futabooo/qmk-firmware-keyball44 development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/b75f051c606d9a86183f5d4fb7a74ea4709491d1ad056f95bc0996f97882d296/futabooo/qmk-firmware-keyball44"
+  },
+  "https://github.com/futabooo/site": {
+    "url": "https://github.com/futabooo/site",
+    "title": "GitHub - futabooo/site: My Personal Site Powered by HonoX",
+    "description": "My Personal Site Powered by HonoX. Contribute to futabooo/site development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/40e705e0d8f6c49ba1a6bf1ad41623f78005a1800473cefa94d482e848764bac/futabooo/site"
+  },
+  "https://github.com/gladevise/remark-link-card": {
+    "url": "https://github.com/gladevise/remark-link-card",
+    "title": "GitHub - gladevise/remark-link-card",
+    "description": "Contribute to gladevise/remark-link-card development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/9753026753727dee7183ea8afc01658655aaea351eb40e46c67c3bdf1853f4a9/gladevise/remark-link-card"
+  },
+  "https://github.com/google/protobuf.dart/blob/master/protoc_plugin/CHANGELOG.md#2100": {
+    "url": "https://github.com/google/protobuf.dart/blob/master/protoc_plugin/CHANGELOG.md#2100",
+    "title": "protobuf.dart/protoc_plugin/CHANGELOG.md at master · google/protobuf.dart",
+    "description": "Runtime library for Dart protobufs. Contribute to google/protobuf.dart development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/4689750a056e7bf803efa27b628b831d1c602f33b0328094c90287c766c5a1a8/google/protobuf.dart"
+  },
+  "https://github.com/gotalab/cc-sdd": {
+    "url": "https://github.com/gotalab/cc-sdd",
+    "title": "GitHub - gotalab/cc-sdd: Turn approved specs into long-running autonomous implementation. A minimal, adaptable SDD harness with Agent Skills for Claude Code, Codex, Cursor, Copilot, Windsurf, OpenCode, Gemini CLI, and Antigravity.",
+    "description": "Turn approved specs into long-running autonomous implementation. A minimal, adaptable SDD harness with Agent Skills for Claude Code, Codex, Cursor, Copilot, Windsurf, OpenCode, Gemini CLI, and Anti...",
+    "image": "https://opengraph.githubassets.com/01ea5a649b0b2efe0b9d057fe2604b9c067e4436a057686b3ba90346f613b284/gotalab/cc-sdd"
+  },
+  "https://github.com/lovell/sharp": {
+    "url": "https://github.com/lovell/sharp",
+    "title": "GitHub - lovell/sharp: High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library.",
+    "description": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library. - lovell/sharp",
+    "image": "https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/12226786/cf816100-9a08-11ea-8fc1-7af9d4bcbf9e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260803T134931Z&X-Amz-Expires=300&X-Amz-Signature=a2f22173e57904b9e9d8eba79e8cba44f35bf3f5c9bb4701cd662947fc17dfeb&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTc2NTI3MSwibmJmIjoxNzg1NzY0OTcxLCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0._s3UFeYwUtskS7AVdy1OgfW93sB_Skz0GLuZQw7W8R8"
+  },
+  "https://github.com/microsoft/beachball": {
+    "url": "https://github.com/microsoft/beachball",
+    "title": "GitHub - microsoft/beachball: The Sunniest Semantic Version Bumper",
+    "description": "The Sunniest Semantic Version Bumper. Contribute to microsoft/beachball development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/164d1fe4a29160513b7a2ba1d9a595f009016fc7cca211daa8a0d2ea099df759/microsoft/beachball"
+  },
+  "https://github.com/qmk/qmk_firmware": {
+    "url": "https://github.com/qmk/qmk_firmware",
+    "title": "GitHub - qmk/qmk_firmware: Open-source keyboard firmware for Atmel AVR and Arm USB families",
+    "description": "Open-source keyboard firmware for Atmel AVR and Arm USB families - qmk/qmk_firmware",
+    "image": "https://opengraph.githubassets.com/f2e7b82ad6706f885c9215e0d6d3ad11c0d479e62cfb59023720c656f07ab1e3/qmk/qmk_firmware"
+  },
+  "https://github.com/satnaing/astro-paper/pull/15": {
+    "url": "https://github.com/satnaing/astro-paper/pull/15",
+    "title": "feat: generate dynamic og image for blog posts by satnaing · Pull Request #15 · satnaing/astro-paper",
+    "description": "Dynamic OG Image Generation dynamic OG images will be generated at build time using Satori. the OG image format will be &lt;blog post title&gt;.svg. draft posts and posts with frontmatter.ogImage ...",
+    "image": "https://opengraph.githubassets.com/d153017ab45cfb6689574f077038a44e3e0aff270dd59fa04c043f1ec2532ce2/satnaing/astro-paper/pull/15"
+  },
+  "https://github.com/shishkin/astro-pagefind": {
+    "url": "https://github.com/shishkin/astro-pagefind",
+    "title": "GitHub - shishkin/astro-pagefind: Astro integration for Pagefind static site search.",
+    "description": "Astro integration for Pagefind static site search. - shishkin/astro-pagefind",
+    "image": "https://opengraph.githubassets.com/0d504a87cc57078e8e09f07cf51cfd21c2f59907b2ed7a7f1a7ebed1cfb49357/shishkin/astro-pagefind"
+  },
+  "https://github.com/vercel/satori": {
+    "url": "https://github.com/vercel/satori",
+    "title": "GitHub - vercel/satori: Enlightened library to convert HTML and CSS to SVG",
+    "description": "Enlightened library to convert HTML and CSS to SVG - vercel/satori",
+    "image": "https://repository-images.githubusercontent.com/github-production-repository-image-32fea6/452769633/a1e1b5fa-b7aa-4cb8-922c-fe1bb31162d6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260803%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260803T134930Z&X-Amz-Expires=300&X-Amz-Signature=7b135860f30d516fd205a6e5c256258a765f7d109c7dd1edd467d15fc31a56e0&X-Amz-SignedHeaders=host&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoiaHR0cHM6Ly9yZXBvc2l0b3J5LWltYWdlcy5naXRodWJ1c2VyY29udGVudC5jb20vIiwia2V5Ijoia2V5MSIsImV4cCI6MTc4NTc2NTI3MCwibmJmIjoxNzg1NzY0OTcwLCJwYXRoIjoicmVwb3NpdG9yeS1pbWFnZXMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIn0.VsAsxALs-Ip8ae0bc6XgzIwxVAOuBbz9myT3mdQ_Du0"
+  },
+  "https://github.com/withastro/astro": {
+    "url": "https://github.com/withastro/astro",
+    "title": "GitHub - withastro/astro: The web framework for content-driven websites. ⭐️ Star to support our work!",
+    "description": "The web framework for content-driven websites. ⭐️ Star to support our work! - withastro/astro",
+    "image": "https://opengraph.githubassets.com/aab1c53e011d324cc573229d4ae2ccba6dfeb274448a91dd4dd492e5a8e42127/withastro/astro"
+  },
+  "https://handbook.gitlab.com/": {
+    "url": "https://handbook.gitlab.com/",
+    "title": "The GitLab Handbook",
+    "description": "GitLab's Handbook is a public guide that documents nearly every aspect of how the company operates offering a blueprint for remote work and ways of working.",
+    "image": "https://handbook.gitlab.com/featured-background.png"
+  },
+  "https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5": {
+    "url": "https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-json5",
+    "title": "JSON5 syntax - Visual Studio Marketplace",
+    "description": "Extension for Visual Studio Code - Adds syntax highlighting of JSON5 files",
+    "image": "https://mrmlnc.gallerycdn.vsassets.io/extensions/mrmlnc/vscode-json5/1.0.0/1475322462889/Microsoft.VisualStudio.Services.Icons.Default"
+  },
+  "https://mogecheck.jp/": {
+    "url": "https://mogecheck.jp/",
+    "title": "住宅ローン比較診断サービス | モゲチェック",
+    "description": "モゲチェックで住宅ローンを比較・シミュレーションしよう！大手銀行からネット銀行、地方銀行までを網羅。審査に通る確率が事前に分かるから、お得な住宅ローン選びがカンタンに！",
+    "image": "https://mogecheck.jp/img/ogp/ogp_default.png"
+  },
+  "https://naya.tech/en-jp": {
+    "url": "https://naya.tech/en-jp",
+    "title": "NAYA - Modular Keyboard",
+    "description": "The most revolutionary modular keyboard for digital creators.",
+    "image": "http://naya.tech/cdn/shop/files/Naya_dec243470.jpg?v=1749055475"
+  },
+  "https://og-playground.vercel.app/": {
+    "url": "https://og-playground.vercel.app/",
+    "title": "Vercel OG Image Playground",
+    "description": "Generate Open Graph images with Vercel’s Edge Function.",
+    "image": "https://og-playground.vercel.app/og.png"
+  },
+  "https://product.10x.co.jp/entry/2024/07/01/124355": {
+    "url": "https://product.10x.co.jp/entry/2024/07/01/124355",
+    "title": "Stailerがスクリーンリーダーに対応するまでの道のり~Flutterでのスクリーンリーダー対応について、あるいはユーザビリティやユーザー獲得の話~ - 10X Product Blog",
+    "description": "こんにちは、ソフトウェアエンジニアの@futaboooです。 先日スクリーンリーダーへ対応したプレスリリースを配信しました。今日はその裏側について紹介です。 10x.co.jp はじめに とあるパートナーのネットスーパーシステムをStailerへリプレイスして少しすると、お客様から「今まで使えていたのに使えなくなった！」という切実な声が届きました。この問い合わせを通じて、視覚障害者のお客様がスクリーンリーダーを使って買い物をしていたこと、そしてStailerがそのニーズに応えていないことに気づきました。 そこで、我々は視覚障害者のお客様へのヒアリングを開始し、どのような環境でアプリを使っている…",
+    "image": "https://cdn.image.st-hatena.com/image/scale/4e202b4e8fa25729c20c5bae87128aec3d89e3d6/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Ff%2Ffutabooo%2F20240625%2F20240625115321.png"
+  },
+  "https://rework.withgoogle.com/intl/jp/guides/managers-research-behind-great-managers#try-googles-manager-feedback-survey": {
+    "url": "https://rework.withgoogle.com/intl/jp/guides/managers-research-behind-great-managers#try-googles-manager-feedback-survey",
+    "title": "Google re:Work - ガイド: データに学ぶ: Google の優れたマネージャー育成に関する調査",
+    "description": "Google が効果的なマネジメントを理解するための道のりは、そもそもマネージャーは本当に重要なのかという問いかけから始まり、優れたマネージャーはチームの成功と組織の成果に大きく影響するというデータに基づく確信にたどり着きました。",
+    "image": "https://www.gstatic.com/marketing-cms/assets/images/09/4d/e12bbd6140a6a0a6828e6fbf6790/hero-image.webp=n-w2104-h700-fcrop64=1,28720000d7a5ffff-rw"
+  },
+  "https://sizu.me/futabooo?show=all": {
+    "url": "https://sizu.me/futabooo?show=all",
+    "title": "futabooo",
+    "description": "futaboooさんのしずかなインターネット",
+    "image": "https://static.sizu.me/api/og-image/097186796759?avatarUrl=https%3A%2F%2Fr2.sizu.me%2Fusers%2F12148%2Favatar.png%3Fv%3D1702821295492&theme=user&username=futabooo"
+  },
+  "https://x.com/futabooo/status/961804014802251776": {
+    "url": "https://x.com/futabooo/status/961804014802251776",
+    "title": "futabooo (@futabooo) on X",
+    "description": "ちゃくちゃくと準備進んでる #Drodkaigi_room4 #DroidKaigi",
+    "image": "https://pbs.twimg.com/media/DVkDoj0V4AApDC4.jpg:large"
+  }
+}

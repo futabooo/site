@@ -14,6 +14,7 @@ futabooo's personal site/blog, built with [HonoX](https://github.com/honojs/hono
 | `bun run preview` | Preview the build with `wrangler dev` (local KV) |
 | `bun run deploy` | Build + `wrangler deploy` (uses production KV) |
 | `bunx biome check app` | Lint + format check. Add `--write` to auto-fix |
+| `bun run link-cards` | Fetch OGP for bare-URL lines in blog posts, cache to `content/link-cards.json`. Add `-- --refresh` to refetch everything |
 
 There is **no test suite** in this repo (no test runner configured).
 
@@ -35,6 +36,8 @@ There is **no test suite** in this repo (no test runner configured).
 
 **Content loading is build-time.** `app/lib/blog.ts` loads every `content/blog/**/index.md` via `import.meta.glob({ eager: true })`, so all posts are **inlined into the Worker bundle**. This means `allPosts` / `getPostById` are available at runtime without filesystem access — safe to call from Worker API routes. Each article is validated against a Zod schema (`blogPostMetaDataSchema`): `tags` requires ≥1 entry, and if `eyeCatchImg` is set then `eyeCatchAlt` is required. By contrast `app/lib/about.ts` reads `content/about/about-cv.md` via `node:fs` and only works at SSG/dev time.
 
+**Bare-URL lines become link cards.** `marked.parse` in `app/lib/blog.ts` is synchronous and runs at module load, so OGP can't be fetched during the build itself. Instead a line that's just a URL (nothing else in the paragraph, not `[text](url)`, not inside a list) is rendered as a card (`.rlc-*` classes in `app/style.css`) using metadata pre-fetched into `content/link-cards.json` by `scripts/fetch-link-cards.ts` — run `bun run link-cards` after adding one and commit the updated JSON. A URL with no cache entry just renders as a normal link. Detection logic lives in `app/lib/link-card.ts` (`getBareLinkHref`), shared by both the fetch script and the marked renderer override.
+
 **Routes that touch the filesystem only work in dev.** `app/routes/blog/[slug]/assets/[filename].tsx` reads files via `node:fs`; in production those assets are served statically from `dist` (copied by the build plugin). Don't rely on fs in routes that need to run in the deployed Worker.
 
 **Static vs. runtime routes.** Pages use `ssgParams` (e.g. `app/routes/blog/[slug].tsx`) to enumerate slugs for pre-rendering. A dynamic route **without** `ssgParams` (e.g. `app/routes/api/likes/[slug].ts`) is not pre-rendered and instead runs in the Worker at request time. Follow HonoX conventions: `export default createRoute(...)` handles GET, `export const POST = createRoute(...)` handles other methods.
@@ -52,4 +55,4 @@ There is **no test suite** in this repo (no test runner configured).
 
 ## Adding a blog post
 
-Create `content/blog/YYYY-MM-DD-slug/index.md` with frontmatter (`title`, `description`, `tags`, `pubDate`; optional `updatedDate`, `eyeCatchImg`+`eyeCatchAlt`). Place images in that folder's `assets/` and reference them as `./assets/foo.png` (rewritten to `/blog/{slug}/assets/foo.png` at render). The slug is the directory name; OG images are generated automatically at build time.
+Create `content/blog/YYYY-MM-DD-slug/index.md` with frontmatter (`title`, `description`, `tags`, `pubDate`; optional `updatedDate`, `eyeCatchImg`+`eyeCatchAlt`). Place images in that folder's `assets/` and reference them as `./assets/foo.png` (rewritten to `/blog/{slug}/assets/foo.png` at render). The slug is the directory name; OG images are generated automatically at build time. If the post has a line that's just a URL, run `bun run link-cards` and commit the resulting `content/link-cards.json` change so it renders as a link card instead of a plain link.

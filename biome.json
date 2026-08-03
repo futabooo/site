@@ -49,7 +49,7 @@
   },
   "overrides": [
     {
-      "includes": ["package.json"],
+      "includes": ["package.json", "content/link-cards.json"],
       "json": {
         "formatter": {
           "trailingCommas": "none"
