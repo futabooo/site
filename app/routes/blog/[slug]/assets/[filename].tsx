@@ -1,6 +1,6 @@
-import { createRoute } from 'honox/factory'
-import { readFileSync, existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { createRoute } from 'honox/factory'
 
 export default createRoute(async (c) => {
   const slug = c.req.param('slug')
