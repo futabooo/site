@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build --mode client && vite build && pagefind --site dist",
     "preview": "wrangler dev",
-    "deploy": "bun run build && wrangler deploy"
+    "deploy": "bun run build && wrangler deploy",
+    "link-cards": "bun run scripts/fetch-link-cards.ts"
   },
   "private": true,
   "dependencies": {

@@ -3,6 +3,13 @@ import hljs from 'highlight.js'
 import { Marked } from 'marked'
 import { markedHighlight } from 'marked-highlight'
 import { z } from 'zod'
+import linkCardsJson from '../../content/link-cards.json'
+import {
+  getBareLinkHref,
+  isLinkCardMeta,
+  type LinkCardCache,
+  renderLinkCard,
+} from './link-card'
 
 export interface BlogPost {
   id: string
@@ -46,6 +53,8 @@ const blogPostMetaDataSchema = z
     }
   )
 
+const linkCards = linkCardsJson as LinkCardCache
+
 const marked = new Marked(
   markedHighlight({
     emptyLangClass: 'hljs',
@@ -56,6 +65,21 @@ const marked = new Marked(
     },
   })
 )
+
+// URLだけの行をリンクカードに変換する
+// 対象URLのOGPは `bun run link-cards` で事前取得し content/link-cards.json に
+// キャッシュしてある。キャッシュに無いURLは通常のリンクとして描画する。
+marked.use({
+  renderer: {
+    paragraph(token) {
+      const href = getBareLinkHref(token)
+      if (!href) return false
+      const meta = linkCards[href]
+      if (!isLinkCardMeta(meta)) return false
+      return renderLinkCard(meta)
+    },
+  },
+})
 
 // viteのbuild時にすべてのindex.mdファイルを読み込む
 const markdownFiles = import.meta.glob('../../content/blog/**/index.md', {
