@@ -125,6 +125,69 @@ const generateOGImages = () => {
   }
 }
 
+// 旧サイト(Astro)のURLから現在のURLへの301リダイレクトをdist/_redirectsに生成するプラグイン
+// 旧: /blog/{年}/{名前}/ → 新: /blog/{YYYY-MM-DD-名前}/
+// 旧: /tags/{小文字・空白はハイフン}/ → 新: /tag/{タグ名}
+const generateRedirects = () => {
+  return {
+    name: 'generate-redirects',
+    closeBundle: () => {
+      const markdownFiles = globSync('content/blog/**/index.md').sort()
+      // 旧パス(末尾スラッシュなし) -> リダイレクト先の候補
+      // 旧サイトに存在しなかった記事(例: 同名のretrospectiveが複数)は
+      // 旧パスが衝突するため、候補が複数あるものは出力しない
+      const candidates = new Map<string, Set<string>>()
+      const addCandidate = (from: string, to: string) => {
+        const tos = candidates.get(from) ?? new Set<string>()
+        tos.add(to)
+        candidates.set(from, tos)
+      }
+      const tags = new Set<string>()
+
+      for (const filePath of markdownFiles) {
+        const pathParts = filePath.split('/')
+        const slug = pathParts[pathParts.length - 2] || ''
+        const matched = slug.match(/^(\d{4})-\d{2}-\d{2}-(.+)$/)
+        if (matched) {
+          const [, year, name] = matched
+          // sitemap/canonicalに合わせて末尾スラッシュなしへ寄せる
+          addCandidate(`/blog/${year}/${name}`, `/blog/${slug}`)
+        }
+
+        const raw = readFileSync(filePath, 'utf-8')
+        const { data } = matter(raw)
+        for (const tag of (data.tags ?? []) as string[]) {
+          tags.add(tag)
+        }
+      }
+
+      for (const tag of [...tags].sort()) {
+        const oldSlug = encodeURIComponent(tag.toLowerCase().replace(/ /g, '-'))
+        addCandidate(`/tags/${oldSlug}`, `/tag/${encodeURIComponent(tag)}`)
+      }
+
+      const lines: string[] = []
+      for (const [from, tos] of candidates) {
+        if (tos.size !== 1) {
+          console.warn(`Skipping ambiguous redirect for ${from}`)
+          continue
+        }
+        const [to] = tos
+        // 末尾スラッシュあり/なしの両方をリダイレクト対象にする
+        lines.push(`${from}/ ${to} 301`)
+        lines.push(`${from} ${to} 301`)
+      }
+
+      // 旧タグ一覧ページは現在存在しないのでブログ一覧へ寄せる
+      lines.push('/tags/ /blog 301')
+      lines.push('/tags /blog 301')
+
+      writeFileSync(join('dist', '_redirects'), `${lines.join('\n')}\n`)
+      console.log(`Generated dist/_redirects (${lines.length} rules)`)
+    },
+  }
+}
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -158,5 +221,6 @@ export default defineConfig({
     build(),
     copyContentAssets(),
     generateOGImages(),
+    generateRedirects(),
   ],
 })
