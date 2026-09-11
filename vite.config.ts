@@ -133,7 +133,15 @@ const generateRedirects = () => {
     name: 'generate-redirects',
     closeBundle: () => {
       const markdownFiles = globSync('content/blog/**/index.md').sort()
-      const lines: string[] = []
+      // 旧パス(末尾スラッシュなし) -> リダイレクト先の候補
+      // 旧サイトに存在しなかった記事(例: 同名のretrospectiveが複数)は
+      // 旧パスが衝突するため、候補が複数あるものは出力しない
+      const candidates = new Map<string, Set<string>>()
+      const addCandidate = (from: string, to: string) => {
+        const tos = candidates.get(from) ?? new Set<string>()
+        tos.add(to)
+        candidates.set(from, tos)
+      }
       const tags = new Set<string>()
 
       for (const filePath of markdownFiles) {
@@ -143,10 +151,7 @@ const generateRedirects = () => {
         if (matched) {
           const [, year, name] = matched
           // sitemap/canonicalに合わせて末尾スラッシュなしへ寄せる
-          const to = `/blog/${slug}`
-          // 末尾スラッシュあり/なしの両方をリダイレクト対象にする
-          lines.push(`/blog/${year}/${name}/ ${to} 301`)
-          lines.push(`/blog/${year}/${name} ${to} 301`)
+          addCandidate(`/blog/${year}/${name}`, `/blog/${slug}`)
         }
 
         const raw = readFileSync(filePath, 'utf-8')
@@ -157,10 +162,20 @@ const generateRedirects = () => {
       }
 
       for (const tag of [...tags].sort()) {
-        const oldSlug = tag.toLowerCase().replace(/ /g, '-')
-        const to = `/tag/${encodeURIComponent(tag)}`
-        lines.push(`/tags/${encodeURIComponent(oldSlug)}/ ${to} 301`)
-        lines.push(`/tags/${encodeURIComponent(oldSlug)} ${to} 301`)
+        const oldSlug = encodeURIComponent(tag.toLowerCase().replace(/ /g, '-'))
+        addCandidate(`/tags/${oldSlug}`, `/tag/${encodeURIComponent(tag)}`)
+      }
+
+      const lines: string[] = []
+      for (const [from, tos] of candidates) {
+        if (tos.size !== 1) {
+          console.warn(`Skipping ambiguous redirect for ${from}`)
+          continue
+        }
+        const [to] = tos
+        // 末尾スラッシュあり/なしの両方をリダイレクト対象にする
+        lines.push(`${from}/ ${to} 301`)
+        lines.push(`${from} ${to} 301`)
       }
 
       // 旧タグ一覧ページは現在存在しないのでブログ一覧へ寄せる
