@@ -1,0 +1,71 @@
+apiVersion: gh-infra/v1
+kind: Repository
+metadata:
+  name: site
+  owner: futabooo
+spec:
+  description: My Personal Site Powered by HonoX
+  homepage: https://futabooo.com
+  visibility: public
+  archived: false
+  topics:
+  - astro
+  - tailwindcss
+  features:
+    issues: true
+    projects: true
+    wiki: false
+    discussions: false
+  merge_strategy:
+    allow_merge_commit: true
+    allow_squash_merge: true
+    allow_rebase_merge: true
+    auto_delete_head_branches: true
+    squash_merge_commit_title: COMMIT_OR_PR_TITLE
+    squash_merge_commit_message: COMMIT_MESSAGES
+    merge_commit_title: MERGE_MESSAGE
+    merge_commit_message: PR_TITLE
+  rulesets:
+  - name: Default Ruleset
+    target: branch
+    enforcement: active
+    conditions:
+      ref_name:
+        include:
+        - ~DEFAULT_BRANCH
+    rules:
+      pull_request:
+        required_approving_review_count: 0
+        dismiss_stale_reviews_on_push: false
+        require_code_owner_review: false
+        require_last_push_approval: false
+        required_review_thread_resolution: false
+      required_status_checks:
+        strict_required_status_checks_policy: false
+        contexts:
+        - context: "Workers Builds: site"
+      non_fast_forward: true
+      deletion: true
+      creation: false
+      required_linear_history: false
+      required_signatures: false
+  - name: Protect default branch
+    target: branch
+    enforcement: active
+    conditions:
+      ref_name:
+        include:
+        - ~DEFAULT_BRANCH
+    rules:
+      non_fast_forward: true
+      deletion: true
+      creation: false
+      required_linear_history: false
+      required_signatures: false
+  actions:
+    enabled: true
+    allowed_actions: all
+    sha_pinning_required: false
+    workflow_permissions: read
+    can_approve_pull_requests: false
+    fork_pr_approval: first_time_contributors
