@@ -18,7 +18,7 @@ futabooo's personal site/blog, built with [HonoX](https://github.com/honojs/hono
 
 There is **no test suite** in this repo (no test runner configured).
 
-**Node version**: managed by asdf via `.tool-versions` (`nodejs 24.14.0`). If you see `No version is set for command node`, the version isn't being picked up — commands can be run with `ASDF_NODEJS_VERSION=24.14.0 <cmd>` as a fallback.
+**Node version**: managed by mise via `.tool-versions` (`nodejs 24.14.0`). If you see `No version is set for command node`, the version isn't being picked up — commands can be run with `mise exec -- <cmd>` as a fallback.
 
 ## Build pipeline
 
