@@ -8,6 +8,8 @@ GitHub リポジトリの設定を宣言的に管理する。`site.yaml` が唯�
 gh extension install babarot/gh-infra
 ```
 
+v0.13.0 以降が必要（`allow_auto_merge` などの対応が入っているため）。古い拡張が入っている場合は `gh extension upgrade babarot/gh-infra`。
+
 ## 使い方
 
 ```sh
@@ -24,10 +26,9 @@ gh infra import futabooo/site > /tmp/site.yaml
 
 ## 管理対象外
 
-gh-infra のスキーマに対応するフィールドが無いため、以下は管理画面での操作が必要。
+ruleset の以下2つは gh-infra のスキーマに対応フィールドが無いため、管理画面での操作が必要。
 
-- **auto-merge の有効/無効** (`allow_auto_merge`) — 現在は有効。Renovate の自動マージが依存している
-- ruleset の `allowed_merge_methods`
-- ruleset の `require_extra_approval_for_unattributed_changes` — 現在は有効
+- `allowed_merge_methods`
+- `require_extra_approval_for_unattributed_changes` — 現在は有効
 
-`plan` はこれらを差分として検出しないが、`apply` がこれらを保持するかは未検証。ruleset を変更するときは `apply` の前後で設定画面を確認すること。
+`plan` はこれらを差分として検出しない。`apply` がこれらを保持するかは未検証なので、ruleset を変更するときは `apply` の前後で設定画面を確認すること。
