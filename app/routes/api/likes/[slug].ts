@@ -15,7 +15,7 @@ const readCount = async (kv: KVNamespace, slug: string): Promise<number> => {
 // GET /api/likes/:slug -> { count }
 export default createRoute(async (c) => {
   const slug = c.req.param('slug')
-  const kv = c.env.LIKES
+  const kv = c.env?.LIKES
   if (!kv) {
     return c.json({ count: 0 })
   }
@@ -32,7 +32,7 @@ export const POST = createRoute(async (c) => {
     return c.json({ error: 'Not Found' }, 404)
   }
 
-  const kv = c.env.LIKES
+  const kv = c.env?.LIKES
   if (!kv) {
     return c.json({ error: 'KV not configured' }, 503)
   }
