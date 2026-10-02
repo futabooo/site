@@ -53,20 +53,19 @@ const Header = ({ profile }: { profile: Resume['profile'] }) => (
 )
 
 const Experiences = ({ items }: { items: Resume['experiences'] }) => (
-  <ul class='timeline timeline-vertical timeline-compact timeline-snap-icon'>
-    {items.map((exp, i) => (
-      <li>
-        {i > 0 && <hr class='bg-base-300' />}
-        <div class='timeline-middle'>
-          <span
-            class={`block w-3 h-3 rounded-full ${
-              exp.divisions.some((d) => !d.period.to)
-                ? 'bg-primary'
-                : 'bg-base-content/30'
-            }`}
-          />
-        </div>
-        <div class='timeline-end mb-10 ml-2 w-full'>
+  // daisyUI の timeline は compact と snap-icon の変数指定が同じ詳細度で競合し、
+  // 本番ビルドの CSS 出力順次第で右寄りになるので Tailwind だけで組む
+  <ol>
+    {items.map((exp) => (
+      <li class='relative pl-7 pb-10 last:pb-0 border-l-2 border-base-300 last:border-transparent ml-1.5'>
+        <span
+          class={`absolute -left-[7px] top-1.5 block w-3 h-3 rounded-full ${
+            exp.divisions.some((d) => !d.period.to)
+              ? 'bg-primary'
+              : 'bg-base-content/30'
+          }`}
+        />
+        <div>
           <h3 class='text-lg font-bold leading-tight'>{exp.company}</h3>
           <p class='text-sm text-base-content/60'>{exp.role}</p>
           <div class='mt-3 space-y-4'>
@@ -92,10 +91,9 @@ const Experiences = ({ items }: { items: Resume['experiences'] }) => (
             ))}
           </div>
         </div>
-        {i < items.length - 1 && <hr class='bg-base-300' />}
       </li>
     ))}
-  </ul>
+  </ol>
 )
 
 const Projects = ({ items }: { items: Resume['projects'] }) => (
