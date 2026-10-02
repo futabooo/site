@@ -28,11 +28,11 @@
     "@cloudflare/workers-types": "4.20260702.1",
     "@hono/vite-build": "1.11.1",
     "@hono/vite-dev-server": "0.26.1",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.18",
-    "@types/node": "^25.0.0",
-    "daisyui": "^5.5.14",
-    "tailwindcss": "^4.1.18",
+    "@tailwindcss/typography": "0.5.20",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "25.9.9",
+    "daisyui": "5.7.47",
+    "tailwindcss": "4.3.3",
     "vite": "^7.3.0",
     "wrangler": "4.143.0"
   }
