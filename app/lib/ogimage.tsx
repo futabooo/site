@@ -38,6 +38,8 @@ export const generateOGImage = async (
           boxShadow: '10px 10px 0 #394e6a',
           border: '3px solid #394e6a',
           borderRadius: '30px 30px 0 0',
+          position: 'relative',
+          boxSizing: 'border-box',
         }}
       >
         <div
