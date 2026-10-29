@@ -31,7 +31,7 @@
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
     "@types/node": "25.9.9",
-    "daisyui": "5.7.48",
+    "daisyui": "5.7.50",
     "tailwindcss": "4.3.3",
     "vite": "7.3.7",
     "wrangler": "4.149.0"
