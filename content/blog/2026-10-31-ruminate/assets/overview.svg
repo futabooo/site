@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="'Hiragino Sans', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#fafaf9"/>
+
+  <!-- lanes -->
+  <rect x="20" y="20" width="300" height="250" rx="10" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="36" y="46" font-size="15" font-weight="700" fill="#334155">パソコン</text>
+  <rect x="20" y="290" width="300" height="156" rx="10" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="36" y="316" font-size="15" font-weight="700" fill="#78350f">claude.ai</text>
+  <rect x="640" y="20" width="300" height="520" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <text x="656" y="46" font-size="15" font-weight="700" fill="#065f46">復習（毎晩）</text>
+
+  <!-- パソコン: Claude Code -->
+  <rect x="40" y="64" width="260" height="70" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="56" y="88" font-weight="700" fill="#1e293b">Claude Code の会話</text>
+  <text x="56" y="110" fill="#475569">会話が終わるたびにフックが起動</text>
+  <text x="56" y="126" fill="#475569" font-family="Menlo, monospace" font-size="13">ruminate sync</text>
+
+  <!-- パソコン: export -->
+  <rect x="40" y="160" width="260" height="70" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="56" y="184" font-weight="700" fill="#1e293b">公式エクスポート</text>
+  <text x="56" y="206" fill="#475569">claude.ai / ChatGPT の全文用</text>
+  <text x="56" y="222" fill="#475569" font-family="Menlo, monospace" font-size="13">ruminate import</text>
+
+  <!-- claude.ai: skill -->
+  <rect x="40" y="334" width="260" height="96" rx="8" fill="#ffffff" stroke="#d97706"/>
+  <text x="56" y="358" font-weight="700" fill="#1e293b">Skill「ruminate 取り込み」</text>
+  <text x="56" y="380" fill="#475569">チャットで一言頼む</text>
+  <text x="56" y="396" fill="#475569">過去チャット検索で会話を集めて</text>
+  <text x="56" y="412" fill="#475569">GitHub コネクタで直接書く</text>
+
+  <!-- center: ruminate-data -->
+  <rect x="380" y="150" width="220" height="150" rx="10" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+  <text x="490" y="178" text-anchor="middle" font-weight="700" font-size="16" fill="#1e293b">ruminate-data</text>
+  <text x="490" y="196" text-anchor="middle" fill="#64748b" font-size="12">非公開リポジトリ</text>
+  <text x="400" y="228" fill="#334155" font-family="Menlo, monospace" font-size="13">logs/   会話ログ（JSONL）</text>
+  <text x="400" y="250" fill="#334155" font-family="Menlo, monospace" font-size="13">review/ 問題と採点の記録</text>
+  <text x="490" y="284" text-anchor="middle" fill="#64748b" font-size="12">DuckDB で読む（ruminate db）</text>
+
+  <!-- arrows into ruminate-data -->
+  <path d="M 300 99 L 340 99 L 340 200 L 378 200" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 300 195 L 340 195" fill="none" stroke="#4b5563" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <path d="M 300 377 L 340 377 L 340 220 L 378 220" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="312" y="88" fill="#64748b" font-size="11">自動</text>
+  <text x="312" y="184" fill="#64748b" font-size="11">任意</text>
+  <text x="312" y="366" fill="#64748b" font-size="11">手動</text>
+
+  <!-- 復習: scheduled task -->
+  <rect x="660" y="64" width="260" height="86" rx="8" fill="#ffffff" stroke="#059669"/>
+  <text x="676" y="88" font-weight="700" fill="#1e293b">出題タスク（21:00）</text>
+  <text x="676" y="110" fill="#475569">claude.ai のスケジュールタスク</text>
+  <text x="676" y="126" fill="#475569">logs/ を読んで 3 問作る</text>
+  <text x="676" y="142" fill="#475569">期限が来た問題を優先</text>
+
+  <!-- 復習: issue -->
+  <rect x="660" y="184" width="260" height="86" rx="8" fill="#ffffff" stroke="#059669"/>
+  <text x="676" y="208" font-weight="700" fill="#1e293b">GitHub Issue</text>
+  <text x="676" y="230" fill="#475569">3 問 + 折りたたみの模範解答</text>
+  <text x="676" y="246" fill="#475569">スマホに通知が来る</text>
+  <text x="676" y="262" fill="#475569">自分が答えを文章でコメント</text>
+
+  <!-- 復習: action -->
+  <rect x="660" y="304" width="260" height="102" rx="8" fill="#ffffff" stroke="#059669"/>
+  <text x="676" y="328" font-weight="700" fill="#1e293b">GitHub Actions の Claude</text>
+  <text x="676" y="350" fill="#475569">コメント直後に起動</text>
+  <text x="676" y="366" fill="#475569">模範解答と照らして ○× と講評</text>
+  <text x="676" y="382" fill="#475569">review/ に記録して Issue を閉じる</text>
+  <text x="676" y="398" fill="#475569" font-size="12">認証は Workload Identity Federation</text>
+
+  <!-- 復習: spacing -->
+  <rect x="660" y="440" width="260" height="80" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-dasharray="4 3"/>
+  <text x="676" y="464" font-weight="700" fill="#166534">間隔を空けて出し直す</text>
+  <text x="676" y="486" fill="#166534">○ → 翌日 → 1 週間後 → 1 か月後</text>
+  <text x="676" y="504" fill="#166534">× → 翌日に戻る</text>
+
+  <!-- arrows in 復習 -->
+  <path d="M 602 200 L 620 200 L 620 107 L 658 107" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 790 150 L 790 182" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 790 270 L 790 302" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 658 355 L 620 355 L 620 262 L 602 262" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M 790 406 L 790 438" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="20" y="460" width="580" height="80" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="36" y="486" font-size="13" font-weight="700" fill="#334155">ログの決まり</text>
+  <text x="36" y="508" fill="#475569" font-size="12">・同じ会話はどの経路で入れても同じファイル名になるので、重複しない</text>
+  <text x="36" y="526" fill="#475569" font-size="12">・残すのは本人の発言と返答の文章だけ。ツールの結果・思考・画像は入れない</text>
+</svg>
