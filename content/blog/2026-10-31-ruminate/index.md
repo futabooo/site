@@ -1,7 +1,7 @@
 ---
 title: "AIとの会話を復習問題にして毎晩出題してもらう仕組みを作った"
 description: "Claude Codeやclaude.aiでの会話をためて、『科学的根拠に基づく最強の勉強法』の方法で復習するruminateという仕組みの話"
-tags: ["diary", "Claude Code", "GitHub Actions"]
+tags: ["Claude Code", "GitHub Actions"]
 pubDate: "2026/10/31"
 ---
 
