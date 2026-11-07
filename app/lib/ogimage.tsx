@@ -1,3 +1,4 @@
+/** @jsxImportSource hono/jsx */
 import fs from 'node:fs'
 import { loadDefaultJapaneseParser } from 'budoux'
 import satori from 'satori'
