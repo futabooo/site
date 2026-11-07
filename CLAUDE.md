@@ -19,7 +19,7 @@ futabooo's personal site/blog, built with [HonoX](https://github.com/honojs/hono
 
 There is **no test suite** in this repo (no test runner configured). On PRs, GitHub Actions (`.github/workflows/check.yaml`) runs `biome ci app scripts` and `bun run typecheck`; Workers Builds only runs the build.
 
-**Node version**: managed by mise via `.tool-versions` (`nodejs 24.14.0`). If you see `No version is set for command node`, the version isn't being picked up — commands can be run with `mise exec -- <cmd>` as a fallback.
+**Node version**: managed by mise — `.tool-versions` is the source of truth (Renovate keeps it updated, so don't copy the version number into docs). If you see `No version is set for command node`, the version isn't being picked up — commands can be run with `mise exec -- <cmd>` as a fallback.
 
 ## Build pipeline
 
