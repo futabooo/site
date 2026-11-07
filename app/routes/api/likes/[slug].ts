@@ -15,6 +15,7 @@ const readCount = async (kv: KVNamespace, slug: string): Promise<number> => {
 // GET /api/likes/:slug -> { count }
 export default createRoute(async (c) => {
   const slug = c.req.param('slug')
+  if (!slug) return c.notFound()
   const kv = c.env?.LIKES
   if (!kv) {
     return c.json({ count: 0 })
@@ -26,6 +27,7 @@ export default createRoute(async (c) => {
 // POST /api/likes/:slug body: { amount } -> { count }
 export const POST = createRoute(async (c) => {
   const slug = c.req.param('slug')
+  if (!slug) return c.notFound()
 
   // 実在する記事のslugのみ受け付ける(任意キーの量産を防ぐ)
   if (!getPostById(slug)) {

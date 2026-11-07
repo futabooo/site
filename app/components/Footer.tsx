@@ -30,6 +30,7 @@ export const Footer = () => {
               class='link'
               href={`https://twitter.com/${SITE_AUTHOR}`}
               target='_blank'
+              rel='noopener'
             >
               {SITE_AUTHOR}
             </a>

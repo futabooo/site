@@ -3,7 +3,7 @@ import type {} from 'hono'
 type Head = {
   title?: string
   description?: string
-  image?: URL
+  image?: string | URL
   canonicalURL?: URL
 }
 

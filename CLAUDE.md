@@ -14,9 +14,10 @@ futabooo's personal site/blog, built with [HonoX](https://github.com/honojs/hono
 | `bun run preview` | Preview the build with `wrangler dev` (local KV) |
 | `bun run deploy` | Build + `wrangler deploy` (uses production KV) |
 | `bunx biome check app` | Lint + format check. Add `--write` to auto-fix |
+| `bun run typecheck` | Type check (`tsc --noEmit`). The build does **not** type-check, so run this after code changes |
 | `bun run link-cards` | Fetch OGP for bare-URL lines in blog posts, cache to `content/link-cards.json`. Add `-- --refresh` to refetch everything |
 
-There is **no test suite** in this repo (no test runner configured).
+There is **no test suite** in this repo (no test runner configured). On PRs, GitHub Actions (`.github/workflows/check.yaml`) runs `biome ci app scripts` and `bun run typecheck`; Workers Builds only runs the build.
 
 **Node version**: managed by mise via `.tool-versions` (`nodejs 24.14.0`). If you see `No version is set for command node`, the version isn't being picked up — commands can be run with `mise exec -- <cmd>` as a fallback.
 

@@ -14,6 +14,7 @@ import { Marked, type Token, type Tokens } from 'marked'
 import { SITE_URL } from '../app/consts'
 import {
   getBareLinkHref,
+  isLinkCardMeta,
   type LinkCardCache,
   type LinkCardEntry,
 } from '../app/lib/link-card'
@@ -180,11 +181,11 @@ async function main() {
     const internal = resolveInternal(url)
     const entry = internal ?? (await fetchExternal(url))
     cache[url] = entry
-    if (entry.ok === false) {
-      failed++
-    } else {
+    if (isLinkCardMeta(entry)) {
       succeeded++
       console.log(`  ok: ${url} -> ${entry.title}`)
+    } else {
+      failed++
     }
   }
 
