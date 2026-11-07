@@ -5,6 +5,7 @@ import { createRoute } from 'honox/factory'
 export default createRoute(async (c) => {
   const slug = c.req.param('slug')
   const filename = c.req.param('filename')
+  if (!slug || !filename) return c.notFound()
 
   // パストラバーサル対策: 許可ディレクトリ内かを確認
   const allowedDir = resolve(process.cwd(), 'content', 'blog')

@@ -13,6 +13,7 @@ export default createRoute(
   }),
   async (c) => {
     const slug = c.req.param('slug')
+    if (!slug) return c.notFound()
     const post = await getPostById(slug)
     if (!post) {
       c.status(404)
@@ -30,9 +31,8 @@ export default createRoute(
         ogImage={`/blog/${post.id}/ogp.png`}
         url={new URL(new URL(c.req.url).pathname, SITE_URL)}
         slug={post.id}
-      >
-        {html}
-      </BlogPost>,
+        html={html}
+      />,
       {
         title: `${post.data.title} - futabooo.com`,
         description: `${post.data.description} - futabooo.com`,

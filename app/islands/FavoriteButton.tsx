@@ -32,8 +32,12 @@ export default function FavoriteButton({ slug }: Props) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount }),
     })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .then((data: { count?: number }) => {
+      .then((res) =>
+        res.ok
+          ? (res.json() as Promise<{ count?: number }>)
+          : Promise.reject(res.status)
+      )
+      .then((data) => {
         if (typeof data.count === 'number') setCount(data.count)
       })
       .catch(() => {
@@ -46,8 +50,12 @@ export default function FavoriteButton({ slug }: Props) {
   useEffect(() => {
     let active = true
     fetch(`/api/likes/${slug}`)
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .then((data: { count?: number }) => {
+      .then((res) =>
+        res.ok
+          ? (res.json() as Promise<{ count?: number }>)
+          : Promise.reject(res.status)
+      )
+      .then((data) => {
         if (active && typeof data.count === 'number') setCount(data.count)
       })
       .catch(() => {

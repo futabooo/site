@@ -18,7 +18,7 @@ export type LinkCardCache = Record<string, LinkCardEntry>
 export function isLinkCardMeta(
   entry: LinkCardEntry | undefined
 ): entry is LinkCardMeta {
-  return !!entry && (entry as LinkCardMeta).ok !== false
+  return !!entry && !('ok' in entry)
 }
 
 /**

@@ -3,7 +3,7 @@ import { SITE_URL } from '../consts'
 interface Props {
   title?: string
   description?: string
-  image?: URL
+  image?: string | URL
   canonicalURL?: URL
 }
 
