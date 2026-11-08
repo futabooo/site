@@ -25,9 +25,14 @@ export default createRoute(
       /src="\.\/assets\/([^"]+)"/g,
       `src="/blog/${post.id}/assets/$1"`
     )
+    const eyeCatchImg = post.data.eyeCatchImg?.replace(
+      /^\.\/assets\//,
+      `/blog/${post.id}/assets/`
+    )
+    const blogData = { ...post.data, eyeCatchImg }
     return c.render(
       <BlogPost
-        blogData={post.data}
+        blogData={blogData}
         ogImage={`/blog/${post.id}/ogp.png`}
         url={new URL(new URL(c.req.url).pathname, SITE_URL)}
         slug={post.id}
@@ -36,7 +41,7 @@ export default createRoute(
       {
         title: `${post.data.title} - futabooo.com`,
         description: `${post.data.description} - futabooo.com`,
-        image: post.data.eyeCatchImg ?? `/blog/${post.id}/ogp.png`,
+        image: eyeCatchImg ?? `/blog/${post.id}/ogp.png`,
         canonicalURL: new URL(new URL(c.req.url).pathname, SITE_URL),
       }
     )
