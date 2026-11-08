@@ -20,6 +20,12 @@
   "https://amzn.to/49WMrtW": {
     "ok": false
   },
+  "https://apps.apple.com/jp/app/id6812671899": {
+    "url": "https://apps.apple.com/jp/app/id6812671899",
+    "title": "アルティラベルアプリ - App Store",
+    "description": "Levain Labsの「アルティラベル」をApp Storeでダウンロードしてください。スクリーンショット、評価とレビュー、ユーザのヒント、「アルティラベル」に似たゲームを見ることなどができます。",
+    "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/70/8a/cf708a19-3b8f-4eb6-3852-c9f64fc3bad1/Placeholder.mill/1200x630wa.jpg"
+  },
   "https://developer.chrome.com/docs/extensions/reference/api/storage?hl=ja": {
     "url": "https://developer.chrome.com/docs/extensions/reference/api/storage?hl=ja",
     "title": "chrome.storage | API | Chrome for Developers"
@@ -203,6 +209,12 @@
     "title": "Vercel OG Image Playground",
     "description": "Generate Open Graph images with Vercel’s Edge Function.",
     "image": "https://og-playground.vercel.app/og.png"
+  },
+  "https://play.google.com/store/apps/details?id=jp.artiapp.label": {
+    "url": "https://play.google.com/store/apps/details?id=jp.artiapp.label",
+    "title": "アルティラベル - 食品表示ラベル作成・印刷 - Apps on Google Play",
+    "description": "Create food labeling (all-in-one label) on your smartphone and print it on A4 label stickers. Allergen information and expiration dates are automatically added. Ideal for markets, consignment sales, and home workshops.",
+    "image": "https://play-lh.googleusercontent.com/UkeIln9GC7oah1VyqSN0iJhrM86yuqec4fq1-3IKqar4_py7uto4UPggC5ZEocSpRiHe35WSJfyMLXkjao_mIg=s0-br30"
   },
   "https://product.10x.co.jp/entry/2024/07/01/124355": {
     "url": "https://product.10x.co.jp/entry/2024/07/01/124355",
