@@ -152,6 +152,10 @@ const generateRedirects = () => {
           const [, year, name] = matched
           // sitemap/canonicalに合わせて末尾スラッシュなしへ寄せる
           addCandidate(`/blog/${year}/${name}`, `/blog/${slug}`)
+          // 2023-12-31(195b59b)以前は年なしの /blog/{name}/ だった
+          if (Number(year) <= 2023) {
+            addCandidate(`/blog/${name}`, `/blog/${slug}`)
+          }
         }
 
         const raw = readFileSync(filePath, 'utf-8')
