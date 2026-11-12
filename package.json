@@ -25,7 +25,7 @@
     "zod": "^4.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.4",
+    "@biomejs/biome": "2.6.6",
     "@cloudflare/workers-types": "5.20261104.1",
     "@hono/vite-build": "1.11.1",
     "@hono/vite-dev-server": "0.26.1",
